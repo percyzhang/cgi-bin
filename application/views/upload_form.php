@@ -24,12 +24,14 @@ and open the template in the editor.
             类型:<input type="radio" value="1" name="type">订阅号
             <input type="radio" value="2" name ="type">服务号
             <input type="radio" value="3" name ="type"> 企业号 </br>
-             <fieldset>
+            添加分组:<input type='radio' name="grouping" id='grouping'> 是 <input type='radio' name="grouping" id='noGrouping'> 否 
+            <fieldset>
             <legend>添加分组</legend>
                 组名：<input type='text'  name ='groupname'>  </br>
                 粉丝数:<input type='text'  name ='fansCount'>
              </fieldset>
-            ccc
+            <input type='hidden' name ='groupData'>
+            
             <input type="submit" value="提交" />
 </fieldset>
 </form>

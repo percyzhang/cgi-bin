@@ -48,6 +48,7 @@ class UserC extends CI_Controller {
         $this->output  
                 ->set_content_type('application/json;charset=utf-8')
                 -> set_output(json_encode($data));
+        $json ="";
     }
     
     public function getGroupListByUserId($userid) {
