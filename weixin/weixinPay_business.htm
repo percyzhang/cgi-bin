@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://mp.weixin.qq.com/paymch/business?action=firstentry&token=145239729&lang=zh_CN -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>微信公众平台</title>
+<script type="text/javascript">
+    var mp = {time:{begin:(+new Date())}};
+    var page_all_dom_load_id = 23521, page_all_dom_load_key = 9;
+    var page_all_onload_id = 23521, page_all_onload_key = 10;
+    var page_all_js_script_id = 23521, page_all_js_script_key = 11;
+    var page_all_ava_id = 23521, page_all_ava_key = 12;
+
+    var report_ports = [];
+    wx_save_report = function(id, key, time){
+        report_ports.push(id + "_" + key + "=" + time);    
+    };
+    wx_report = function(){
+        if (report_ports.length == 8){
+            if (Math.random() < 1){//采样
+                var _img = new Image(1, 1);
+                _img.src = "/misc/jsreport?type=avg&r=" + Math.random() + "&" + report_ports.join("&") + "&" 
+                        + page_dom_load_id  + "_" + page_dom_load_key  + "|"
+                        + page_js_script_id + "_" + page_js_script_key + "|"
+                        + page_ava_id       + "_" + page_ava_key       + "="
+                        + (script_begin-mp.time.domLoaded);
+            }
+        }
+    };
+    wx_main = function(mod){
+        var script_end = (+(new Date()));
+        console.log('Script Exec Time : %s ms'.sprintf(script_end - script_begin));
+        if (
+                typeof page_js_script_id != "undefined" && typeof page_js_script_key != "undefined"
+                && typeof page_ava_id != "undefined" && typeof page_ava_key != "undefined"
+            ){
+            wx_save_report(page_js_script_id, page_js_script_key, script_end - script_begin);
+            wx_save_report(page_all_js_script_id, page_all_js_script_key, script_end - script_begin);
+            wx_save_report(page_ava_id, page_ava_key, script_end - mp.time.begin);
+            wx_save_report(page_all_ava_id, page_all_ava_key, script_end - mp.time.begin);
+            wx_report();
+        }
+    };
+</script>
+<link href="https://res.wx.qq.com/paymchres/zh_CN/htmledition/images/mp/favicon1d8a38.ico" rel="Shortcut Icon">
+<link rel="stylesheet" type="text/css" href="layout_head1ef290.css">
+<link rel="stylesheet" type="text/css" href="base1fd84e.css">
+<link rel="stylesheet" type="text/css" href="lib1d902c.css">
+
+		
+<link rel="stylesheet" type="text/css" href="business_common20323c.css">
+<link rel="stylesheet" type="text/css" href="business_index11f88a2.css">
+
+
+        <script>
+        if(location.port != ""){
+            try{
+                document.domain = "mp.weixin.qq.com";
+            }catch(e){}
+        }
+        </script>
+
+    </head>
+    <body class="zh_CN" style="background:#FFFFFF;">
+    	<div class="head" id="header">
+		</div>
+        <div id="body" class="">
+            <div class="">
+                
+	<div class="main_hd">
+        <h2>微信支付</h2>
+    	    </div>
+
+	
+	<div class="main_bd">
+        <div class="highlight_box icon_wrap">
+            
+            <span class="icon business_ico_s"></span>
+            <h4 class="title">微信支付</h4>
+            <p class="desc">
+                                    未申请
+                 
+            </p>
+        </div>
+	    <div class="pay-index">
+	        
+                        <dl class="intro">
+                <dt><span class="ico_intro ico ico_1 l"></span><h3>介绍</h3></dt>
+                <dd><ul>
+                    <li>微信支付（商户功能），是公众平台向有出售物品需求的公众号提供推广销售、支付收款、经营分析的整套解决方案。</li>
+                    <li>商户通过自定义菜单、关键字回复等方式向订阅用户推送商品消息，用户可在微信公众号中完成选购支付的流程。</li>
+                    <li>商户也可以把商品网页生成二维码，张贴在线下的场景，如车站和广告海报。用户扫描后可打开商品详情，在微信中直接购买。</li>
+                    
+                    <li>您处于新申请流程，查看<a target="_blank" href="https://mp.weixin.qq.com/paymch/readtemplate?t=mp/business/faq2_tmpl">公众号微信支付申请指引（新）</a></li>
+                    <li><a target="_blank" href="http://kf.qq.com/faq/120911VrYVrA140228V7JbEj.html">微信支付申请常见问题</a></li>
+                </ul></dd>
+            </dl>
+             
+
+            <dl class="intro pay-bd">
+                <dt class="clearfix"><span class="ico_approve ico ico_1 l"></span><h3>申请</h3> </dt>
+	        	<dd>
+                    <div class="step_list_wrp">
+                        <ul class="step_list">
+                            <li class="step_item step_box no_extra_up">
+                                
+                                <div class="step_inner">
+                                    <div class="step_list_opr">
+                                                                                    <a target="_top" class="btn btn_primary" href="https://mp.weixin.qq.com/paymch/mpmchapplyv3?action=profession&t=payApply/businessInfo&lang=zh_CN&token=145239729">填写</a>
+                                                                            </div>
+                                    
+                                    <div class="step_content">
+                                        <h4>
+                                            业务审核资料                                        </h4>
+                                        <p class="step_desc">
+                                            填写企业联系人、营业执照等信息，并上传相关证件扫描件                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="step_inner">
+                                    <div class="step_list_opr">
+                                                                                    <a target="_top" class="btn btn_primary" href="https://mp.weixin.qq.com/paymch/mpmchapplyv3?action=baseinfo&t=payApply/baseInfo&lang=zh_CN&token=145239729">填写</a>
+                                                                            </div>
+
+                                    <div class="step_content">
+                                        <h4>
+                                            商户基本资料                                        </h4>
+                                        <p class="step_desc">
+                                            选择支付场景、商品类目等内容                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="step_inner">
+                                    <div class="step_list_opr">
+                                                                                   <a target="_top" class="btn btn_primary" href="https://mp.weixin.qq.com/paymch/mpmchapplyv3?action=finance&lang=zh_CN&token=145239729">填写</a>
+                                                                            </div>
+                                    
+                                    <div class="step_content">
+                                        <h4>
+                                            财务审核资料                                        </h4>
+                                        <p class="step_desc">
+                                            填写企业银行账户相关信息                                        </p>
+                                    </div>
+                                </div>
+
+                                <span class="icon_step_line icon_step_line_up"></span>
+                                <span class="icon_step_line icon_step_line_down"></span>
+                                <span class="icon_step_wrapper"><i class="icon_step_list step">1</i></span>
+                                <span class="arrow_wrapper"><i class="arrow arrow_l arrow_out"></i><i class="arrow arrow_l arrow_in"></i></span>
+                            </li>
+                            
+                            <li class="step_item step_box no_extra_up">
+                                
+                                <div class="step_inner">
+                                    <div class="step_list_opr">
+                                                                               	<span>未签署</span>
+                                            <a target="_blank" href="https://mp.weixin.qq.com/paymch/readtemplate?t=mp/payApplyV2/preview_tmpl&type=acknowledge&lang=zh_CN&token=145239729">承诺函预览</a>
+                                                                            </div>
+                                    
+                                    <div class="step_content">
+                                        <h4>
+                                            签署承诺函                                        </h4>
+                                        <p class="step_desc">
+                                            资料审核通过后即可下载承诺函，打印盖章后回寄盖章原件                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="step_inner">
+                                    <div class="step_list_opr">
+                                    	                                            <span class=""> 未签署</span>
+                                            <a target="_blank" href="https://mp.weixin.qq.com/paymch/readtemplate?t=mp/payApplyV2/preview_tmpl&type=contract&lang=zh_CN&token=145239729">协议预览</a>
+                                                                             </div>
+
+                                    <div class="step_content">
+                                        <h4>
+                                            签署协议                                        </h4>
+                                        <p class="step_desc">
+                                            确认商户信息、在线签署微信支付服务协议                                        </p>
+                                    </div>
+                                 </div>
+
+                                 <span class="icon_step_line icon_step_line_up"></span>
+                                <span class="icon_step_line icon_step_line_down"></span>
+                                <span class="icon_step_wrapper"><i class="icon_step_list step">2</i></span>
+                                <span class="arrow_wrapper"><i class="arrow arrow_l arrow_out"></i><i class="arrow arrow_l arrow_in"></i></span>
+                            </li>
+                            
+                            <li class="step_item step_box step_box_hint" style="display:none">
+                                
+                                <div class="step_inner">
+                                    <div>请签署并盖章承诺函后邮寄给我们，以便进行后续步骤。</div>
+                                </div>
+                                <span class="icon_step_line icon_step_line_up"></span> <span class="icon_step_line icon_step_line_down"></span><span class="arrow_t_wrapper"><i class="arrow_t_out"></i><i class="arrow_t_in"></i></span>
+                            </li>
+                            
+                            <li class="step_item step_box no_extra_up"> 
+                             
+                                                          <div class="step_inner">
+                                    <div class="step_list_opr">
+                                                                                    <span class="">未发布</span>
+                                                                            </div>
+                                    <div class="step_content">
+                                        <h4>
+                                            功能发布                                        </h4>
+                                        <p class="step_desc">
+                                            协议已签署后，可全网发布产品，面向全部微信用户销售商品或提供服务                                        </p>
+                                    </div>
+                             </div>
+                                                          
+                             <div class="step_inner">
+                                    <div class="step_list_opr">
+                                                                                    <span class=""> 未开启</span>
+                                                                            </div>
+                                    <div class="step_content">
+                                        <h4>
+                                            开启结算                                        </h4>
+                                        <p class="step_desc">
+                                            承诺函已签署，且协议已签署后，系统将自动开启资金结算                                        </p>
+                                    </div>
+                             </div>
+                                <span class="icon_step_wrapper"><i class="icon_step_list step">3</i></span>
+                                <span class="arrow_wrapper"><i class="arrow arrow_l arrow_out"></i><i class="arrow arrow_l arrow_in"></i></span>
+                            </li>
+                        </ul>
+                    </div>      
+                </dd>
+                <dd class="clearfix">
+                    <span class="update">客服电话：0755-83768788　反馈邮箱：weixinpay@tencent.com</span>
+                </dd>
+	        </dl>
+	    </div>
+	</div>
+
+            </div>
+        </div>
+        <script>
+            mp.time.domLoaded = (+new Date());
+        </script>
+        <script type="text/javascript">var MODULES = {'mp/biz_common/jquery.ui/jquery.ui.sortable.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_common/jquery.ui/jquery.ui.sortable1d902c.js','.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/.js','mp/biz_common/jquery.ui/jquery.ui.draggable.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_common/jquery.ui/jquery.ui.draggable1d902c.js','mp/biz_common/moment.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_common/moment1d902c.js','mp/biz_common/jquery-1.9.1.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_common/jquery-1.9.11d902c.js','mp/biz_common/jquery.validate.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_common/jquery.validate1ec4f3.js','mp/biz_common/template-2.0.1.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_common/template-2.0.11d902c.js','mp/biz_common/aes.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_common/aes1d902c.js','mp/biz_common/cookie.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_common/cookie1dd7ac.js','mp/biz_common/underscore.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_common/underscore1d902c.js','mp/biz_common/xss.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_common/xss1d902c.js','mp/biz_web/lib/highcharts.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_web/lib/highcharts1d902c.js','mp/biz_web/lib/soundmanager2.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_web/lib/soundmanager21d902c.js','mp/biz_web/lib/swfobject.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_web/lib/swfobject1d902c.js','mp/biz_web/lib/video.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_web/lib/video1d902c.js','mp/biz_web/lib/json.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_web/lib/json1d902c.js','mp/biz_web/lib/spin.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_web/lib/spin1d902c.js','mp/biz_web/lib/store.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_web/lib/store1d902c.js','biz_web/lib/json.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/biz_web/lib/json.js','mp/biz_web/lib/uploadify.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_web/lib/uploadify1d902c.js','biz_web/lib/swfobject.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/biz_web/lib/swfobject.js','mp/biz_web/lib/audiojs.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_web/lib/audiojs1d902c.js','mp/biz_web/ui/input/lentips.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_web/ui/input/lentips1d902c.js','mp/biz_web/ui/dropdown.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_web/ui/dropdown1d902c.js','biz_web/widget/dropdown.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/biz_web/widget/dropdown.css','tpl/biz_web/ui/dropdown.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/biz_web/ui/dropdown.html.js','mp/biz_web/ui/checkbox.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_web/ui/checkbox1d902c.js','tpl/biz_web/ui/checkbox.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/biz_web/ui/checkbox.html.js','mp/biz_web/ui/dateRange.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/biz_web/ui/dateRange1d902c.js','tpl/biz_web/ui/dateRange.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/biz_web/ui/dateRange.html.js','biz_web/widget/date_range.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/biz_web/widget/date_range.css','mp/common/wx/media/audio.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/media/audio1d902c.js','biz_web/lib/soundmanager2.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/biz_web/lib/soundmanager2.js','tpl/media/audio.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/media/audio.html.js','xss/ui/media.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/xss/ui/media.css','common/qq/Class.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/qq/Class.js','mp/common/wx/media/simpleAppmsg.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/media/simpleAppmsg1d902c.js','tpl/media/simple_appmsg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/media/simple_appmsg.html.js','mp/common/wx/media/idCard.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/media/idCard1d902c.js','tpl/media/id_card.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/media/id_card.html.js','mp/common/wx/media/video.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/media/video1d902c.js','xss/ui/media/richvideo.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/xss/ui/media/richvideo.css','biz_web/lib/video.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/biz_web/lib/video.js','common/wx/Cgi.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/Cgi.js','common/wx/time.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/time.js','tpl/media/video.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/media/video.html.js','tpl/media/videomsg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/media/videomsg.html.js','mp/common/wx/media/appmsg.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/media/appmsg1d902c.js','tpl/media/appmsg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/media/appmsg.html.js','mp/common/wx/media/appmsgDialog.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/media/appmsgDialog1d902c.js','common/wx/popup.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/popup.js','widget/msg_list.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/widget/msg_list.css','media/media_cgi.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/media/media_cgi.js','common/wx/pagebar.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/pagebar.js','tpl/media/single_appmsg_dialog/layout.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/media/single_appmsg_dialog/layout.html.js','tpl/media/single_appmsg_dialog/item.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/media/single_appmsg_dialog/item.html.js','mp/common/wx/media/factory.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/media/factory1d902c.js','common/wx/media/img.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/media/img.js','common/wx/media/audio.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/media/audio.js','common/wx/media/video.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/media/video.js','common/wx/media/appmsg.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/media/appmsg.js','common/qq/emoji.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/qq/emoji.js','mp/common/wx/media/img.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/media/img1d902c.js','tpl/media/img.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/media/img.html.js','mp/common/wx/richEditor/emotion.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/richEditor/emotion1d902c.js','tpl/richEditor/emotion.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/richEditor/emotion.html.js','mp/common/wx/richEditor/emotionEditor.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/richEditor/emotionEditor1d902c.js','xss/ui/emotion_editor.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/xss/ui/emotion_editor.css','tpl/richEditor/emotionEditor.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/richEditor/emotionEditor.html.js','mp/common/wx/richEditor/wysiwyg.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/richEditor/wysiwyg1d902c.js','common/wx/upload.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/upload.js','common/wx/Tips.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/Tips.js','mp/common/wx/richEditor/editorRange.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/richEditor/editorRange1d902c.js','mp/common/wx/richEditor/msgSender.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/richEditor/msgSender1d902c.js','xss/ui/msg_sender.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/xss/ui/msg_sender.css','common/qq/jquery.plugin/tab.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/qq/jquery.plugin/tab.js','media/media_dialog.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/media/media_dialog.js','common/wx/media/factory.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/media/factory.js','mp/common/wx/multiSelector/city.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/multiSelector/city1d902c.js','common/wx/multiSelector.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/multiSelector.js','mp/common/wx/multiSelector/industry.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/multiSelector/industry1d902c.js','mp/common/wx/widgetBridge.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/widgetBridge1d902c.js','mp/common/wx/autocomplete.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/autocomplete1d902c.js','common/wx/widgetBridge.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/widgetBridge.js','mp/common/wx/pagebar.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/pagebar1ef290.js','xss/ui/pagination.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/xss/ui/pagination.css','tpl/pagebar.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/pagebar.html.js','mp/common/wx/popup.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/popup1ef290.js','tpl/popup.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/popup.html.js','mp/common/wx/anchor.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/anchor1d902c.js','mp/common/wx/RichBuddy.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/RichBuddy1d902c.js','tpl/RichBuddy/RichBuddyLayout.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/RichBuddy/RichBuddyLayout.html.js','tpl/RichBuddy/RichBuddyContent.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/RichBuddy/RichBuddyContent.html.js','xss/ui/rich_buddy.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/xss/ui/rich_buddy.css','common/wx/remark.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/remark.js','user/user_cgi.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/user/user_cgi.js','common/qq/events.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/qq/events.js','mp/common/wx/dateSelect.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/dateSelect1d902c.js','xss/ui/date_select.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/xss/ui/date_select.css','tpl/dateSelect.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/dateSelect.html.js','biz_web/ui/dropdown.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/biz_web/ui/dropdown.js','biz_common/moment.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/biz_common/moment.js','common/lib/datepicker.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/lib/datepicker.js','mp/common/wx/dragHelper.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/dragHelper1d902c.js','mp/common/wx/dropdowns.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/dropdowns1d902c.js','tpl/dropdowns.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/dropdowns.html.js','mp/common/wx/iframe.method.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/iframe.method1d902c.js','common/wx/iframe.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/iframe.js','mp/common/wx/wxt.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/wxt1d902c.js','mp/common/wx/slider.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/slider1d902c.js','widget/slider.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/widget/slider.css','common/wx/dragHelper.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/dragHelper.js','tpl/slider.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/slider.html.js','mp/common/wx/editit.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/editit1d902c.js','tpl/editit.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/editit.html.js','mp/common/wx/region.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/region1d902c.js','mp/common/wx/noticeBox.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/noticeBox1d902c.js','tpl/noticeBox.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/noticeBox.html.js','mp/common/wx/trade.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/trade1d902c.js','common/qq/prototype.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/qq/prototype.js','mp/common/wx/hourspan.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/hourspan1d902c.js','tpl/hourspan.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/hourspan.html.js','mp/common/wx/verifycode.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/verifycode1d902c.js','widget/verifycode.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/widget/verifycode.css','tpl/verifycode.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/verifycode.html.js','mp/common/wx/accordion.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/accordion1d902c.js','tpl/accordion.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/accordion.html.js','mp/common/wx/top.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/top20323c.js','tpl/top.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/top.html.js','mp/common/wx/Cgi.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/Cgi1d902c.js','common/qq/mask.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/qq/mask.js','common/wx/dialog.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/dialog.js','mp/common/wx/multiDropdown.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/multiDropdown1d902c.js','xss/ui/dropdown_menu.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/xss/ui/dropdown_menu.css','tpl/multi_dropdown.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/multi_dropdown.html.js','tpl/multi_ddchild.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/multi_ddchild.html.js','mp/common/wx/tooltipsManager.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/tooltipsManager1d902c.js','common/wx/tooltips.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/tooltips.js','mp/common/wx/stopMultiRequest.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/stopMultiRequest1d902c.js','mp/common/wx/Step.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/Step1d902c.js','xss/ui/processor_bar.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/xss/ui/processor_bar.css','tpl/step.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/step.html.js','mp/common/wx/tooltips.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/tooltips1d902c.js','tpl/tooltips.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/tooltips.html.js','mp/common/wx/simplePopup.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/simplePopup1d902c.js','tpl/simplePopup.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/simplePopup.html.js','biz_common/jquery.validate.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/biz_common/jquery.validate.js','mp/common/wx/Tips.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/Tips1ef290.js','mp/common/wx/pay_by_qrcode.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/pay_by_qrcode1d902c.js','tpl/pay_by_qrcode.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/pay_by_qrcode.html.js','mp/common/wx/remark.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/remark1d902c.js','common/wx/simplePopup.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/simplePopup.js','mp/common/wx/phone_validate.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/phone_validate1d902c.js','tpl/phone_validate.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/phone_validate.html.js','mp/common/wx/upload.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/upload1e70db.js','biz_web/lib/uploadify.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/biz_web/lib/uploadify.js','xss/ui/upload.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/xss/ui/upload.css','tpl/uploader.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/uploader.html.js','mp/common/wx/keyword.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/keyword1d902c.js','tpl/keyword.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/keyword.html.js','tpl/basekeyword.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/basekeyword.html.js','mp/common/wx/tooltip.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/tooltip1d902c.js','tpl/tooltip.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/tooltip.html.js','mp/common/wx/multiSelector.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/multiSelector1d902c.js','widget/areaselector.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/widget/areaselector.css','tpl/multiSelector/list.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/multiSelector/list.html.js','tpl/multiSelector/item.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/multiSelector/item.html.js','mp/common/wx/time.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/time1d902c.js','mp/common/wx/dialog.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/wx/dialog1f45dc.js','biz_common/jquery.ui/jquery.ui.draggable.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/biz_common/jquery.ui/jquery.ui.draggable.js','tpl/dialog.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/dialog.html.js','mp/common/qq/jquery.plugin/tab.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/qq/jquery.plugin/tab1d902c.js','tpl/tab.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/tab.html.js','xss/ui/msg_tab.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/xss/ui/msg_tab.css','mp/common/qq/mask.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/qq/mask1d902c.js','biz_web/lib/spin.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/biz_web/lib/spin.js','mp/common/qq/queryString.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/qq/queryString1d902c.js','mp/common/qq/url.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/qq/url1d902c.js','mp/common/qq/emoji.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/qq/emoji1d902c.js','xss/ui/emoji.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/xss/ui/emoji.css','mp/common/qq/events.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/qq/events1d902c.js','mp/common/qq/Class.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/qq/Class1d902c.js','mp/common/lib/datepicker.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/lib/datepicker1d902c.js','xss/ui/datepicker.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/xss/ui/datepicker.css','mp/common/lib/MockJax.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/lib/MockJax1d902c.js','mp/common/lib/colorpicker.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/common/lib/colorpicker1d902c.js','tpl/colorpicker.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/colorpicker.html.js','mp/business/course.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/course1d902c.js','common/wx/top.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/top.js','mp/business/source.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/source1d902c.js','common/wx/dateSelect.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/dateSelect.js','biz_common/underscore.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/biz_common/underscore.js','biz_web/lib/highcharts.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/biz_web/lib/highcharts.js','mp/business/iframe.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/iframe1d902c.js','mp/business/pay-reg.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/pay-reg1d902c.js','common/wx/iframe.method.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/iframe.method.js','mp/business/overview.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/overview1f1ea2.js','mp/business/faq.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/faq1d902c.js','common/wx/anchor.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/anchor.js','mp/business/rightlist.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/rightlist1f88a2.js','mp/business/order.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/order1f1930.js','mp/business/whitelist.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/whitelist2074cd.js','common/wx/verifycode.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/verifycode.js','mp/business/right.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/right1f88a2.js','mp/business/setting.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/setting1d902c.js','biz_web/ui/checkbox.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/biz_web/ui/checkbox.js','mp/business/release.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/release1d902c.js','mp/business/arbist.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/arbist1d902c.js','mp/business/first_check.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/first_check1d902c.js','mp/business/info.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/info2074cd.js','mp/business/rank.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/business/rank1d902c.js','mp/payApply/businessMenu.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/payApply/businessMenu1d902c.js','mp/payApply/release.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/payApply/release1f88a2.js','common/wx/Step.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/Step.js','mp/payApply/earnest.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/payApply/earnest1ef290.js','mp/payApply/finance.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/payApply/finance20a2fd.js','mp/payApply/baseInfo.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/payApply/baseInfo1d902c.js','mp/payApply/businessInfo.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/payApply/businessInfo1e92be.js','payApply/businessMenu.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/payApply/businessMenu.js','mp/payApply/index.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/payApply/index1faa76.js','mp/tpl/shop/igoodlist.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/shop/igoodlist.html1d902c.js','mp/tpl/shop/skulist.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/shop/skulist.html1d902c.js','mp/tpl/shop/goodlist.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/shop/goodlist.html1d902c.js','mp/tpl/shop/grouplist.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/shop/grouplist.html1d902c.js','mp/tpl/shop/minilist.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/shop/minilist.html1d902c.js','mp/tpl/setting/multi_infowindow_check.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/setting/multi_infowindow_check.html1d902c.js','mp/tpl/setting/more_size.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/setting/more_size.html1d902c.js','mp/tpl/setting/multi_search_result.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/setting/multi_search_result.html1d902c.js','mp/tpl/setting/multi_infowindow_edit.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/setting/multi_infowindow_edit.html1d902c.js','mp/tpl/user/verifylist.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/user/verifylist.html1d902c.js','mp/tpl/user/grouplist.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/user/grouplist.html1d902c.js','mp/tpl/user/userlist.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/user/userlist.html1d902c.js','mp/tpl/multiSelector/list.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/multiSelector/list.html1d902c.js','mp/tpl/multiSelector/item.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/multiSelector/item.html1d902c.js','mp/tpl/richEditor/emotion.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/richEditor/emotion.html1d902c.js','mp/tpl/richEditor/emotionEditor.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/richEditor/emotionEditor.html1d902c.js','mp/tpl/RichBuddy/RichBuddyContent.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/RichBuddy/RichBuddyContent.html1d902c.js','mp/tpl/RichBuddy/RichBuddyLayout.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/RichBuddy/RichBuddyLayout.html1d902c.js','mp/tpl/media/single_appmsg_dialog/layout.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/single_appmsg_dialog/layout.html1d902c.js','mp/tpl/media/single_appmsg_dialog/item.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/single_appmsg_dialog/item.html1d902c.js','mp/tpl/media/appmsg_edit/editor.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/appmsg_edit/editor.html1d902c.js','mp/tpl/media/appmsg_edit/first_appmsg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/appmsg_edit/first_appmsg.html1d902c.js','mp/tpl/media/appmsg_edit/small_appmsg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/appmsg_edit/small_appmsg.html1d902c.js','mp/tpl/media/dialog/file_layout.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/dialog/file_layout.html1d902c.js','mp/tpl/media/dialog/file.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/dialog/file.html1d902c.js','mp/tpl/media/dialog/appmsg_layout.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/dialog/appmsg_layout.html1d902c.js','mp/tpl/media/dialog/videomsg_layout.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/dialog/videomsg_layout.html1d902c.js','mp/tpl/media/simple_appmsg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/simple_appmsg.html1d902c.js','mp/tpl/media/audio.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/audio.html1d902c.js','mp/tpl/media/id_card.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/id_card.html1d902c.js','mp/tpl/media/video.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/video.html1d902c.js','mp/tpl/media/appmsg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/appmsg.html1d902c.js','mp/tpl/media/img.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/img.html1d902c.js','mp/tpl/media/videomsg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/media/videomsg.html1d902c.js','mp/tpl/notice/index.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/notice/index.html1d902c.js','mp/tpl/biz_web/ui/dropdown.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/biz_web/ui/dropdown.html1f88a2.js','mp/tpl/biz_web/ui/checkbox.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/biz_web/ui/checkbox.html1d902c.js','mp/tpl/biz_web/ui/dateRange.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/biz_web/ui/dateRange.html1d902c.js','mp/tpl/wxverify/nonprofit_preview.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/nonprofit_preview.html1d902c.js','mp/tpl/wxverify/media_preview.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/media_preview.html1d902c.js','mp/tpl/wxverify/increment_tax_form.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/increment_tax_form.html1d902c.js','mp/tpl/wxverify/entreg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/entreg.html1d902c.js','mp/tpl/wxverify/mediaentreg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/mediaentreg.html1d902c.js','mp/tpl/wxverify/profitablereg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/profitablereg.html1d902c.js','mp/tpl/wxverify/commonreg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/commonreg.html1d902c.js','mp/tpl/wxverify/ent_preview.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/ent_preview.html1d902c.js','mp/tpl/wxverify/mediaent_preview.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/mediaent_preview.html1d902c.js','mp/tpl/wxverify/profitable_preview.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/profitable_preview.html1d902c.js','mp/tpl/wxverify/common_preview.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/common_preview.html1d902c.js','mp/tpl/wxverify/govreg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/govreg.html1d902c.js','mp/tpl/wxverify/step1.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/step1.html1d902c.js','mp/tpl/wxverify/civilianreg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/civilianreg.html1d902c.js','mp/tpl/wxverify/gov_preview.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/gov_preview.html1d902c.js','mp/tpl/wxverify/step2.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/step2.html1d902c.js','mp/tpl/wxverify/step3.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/step3.html1d902c.js','mp/tpl/wxverify/confirmname.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/confirmname.html1d902c.js','mp/tpl/wxverify/civilian_preview.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/civilian_preview.html1d902c.js','mp/tpl/wxverify/step4.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/step4.html1d902c.js','mp/tpl/wxverify/step5.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/step5.html1d902c.js','mp/tpl/wxverify/artistreg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/artistreg.html1d902c.js','mp/tpl/wxverify/artist_preview.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/artist_preview.html1d902c.js','mp/tpl/wxverify/shopreg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/shopreg.html1d902c.js','mp/tpl/wxverify/socialreg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/socialreg.html1d902c.js','mp/tpl/wxverify/shop_preview.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/shop_preview.html1d902c.js','mp/tpl/wxverify/social_preview.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/social_preview.html1d902c.js','mp/tpl/wxverify/nonprofitreg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/nonprofitreg.html1d902c.js','mp/tpl/wxverify/mediareg.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/wxverify/mediareg.html1d902c.js','mp/tpl/message/video_popup.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/message/video_popup.html1d902c.js','mp/tpl/tooltip.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/tooltip.html1d902c.js','mp/tpl/account_message_list.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/account_message_list.html1d902c.js','mp/tpl/hourspan.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/hourspan.html1d902c.js','mp/tpl/verifycode.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/verifycode.html1d902c.js','mp/tpl/msgListItem.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/msgListItem.html1d902c.js','mp/tpl/pagebar.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/pagebar.html1d902c.js','mp/tpl/popup.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/popup.html1d902c.js','mp/tpl/tab.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/tab.html1d902c.js','mp/tpl/multi_dropdown.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/multi_dropdown.html1d902c.js','mp/tpl/simple_popup.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/simple_popup.html1d902c.js','mp/tpl/colorpicker.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/colorpicker.html1d902c.js','mp/tpl/tooltips.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/tooltips.html1ef290.js','mp/tpl/dropdowns.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/dropdowns.html1d902c.js','mp/tpl/remark.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/remark.html1d902c.js','mp/tpl/phone_validate.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/phone_validate.html1d902c.js','mp/tpl/noticeBox.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/noticeBox.html1d902c.js','mp/tpl/confirm.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/confirm.html1d902c.js','mp/tpl/dialog.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/dialog.html1d902c.js','mp/tpl/accordion.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/accordion.html1d902c.js','mp/tpl/top.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/top.html1ec4f3.js','mp/tpl/multi_ddchild.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/multi_ddchild.html1d902c.js','mp/tpl/uploader.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/uploader.html1d902c.js','mp/tpl/step.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/step.html1d902c.js','mp/tpl/simplePopup.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/simplePopup.html1d902c.js','mp/tpl/dateSelect.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/dateSelect.html1d902c.js','mp/tpl/basekeyword.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/basekeyword.html1d902c.js','mp/tpl/pay_by_qrcode.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/pay_by_qrcode.html1d902c.js','mp/tpl/slider.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/slider.html1d902c.js','mp/tpl/editit.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/editit.html1d902c.js','mp/tpl/keyword.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/tpl/keyword.html1d902c.js','mp/jquery-1.7.2.min.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/jquery-1.7.2.min1d902c.js','mp/jquery-1.8.3.min.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mp/jquery-1.8.3.min1d902c.js','mod/mobile/amount.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mod/mobile/amount1d902c.js','mod/mobile/string.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mod/mobile/string.js','mod/mobile/form.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mod/mobile/form1d902c.js','mod/mobile/md5.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mod/mobile/md51d902c.js','mod/mobile/rsa.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mod/mobile/rsa1d902c.js','mod/mobile/shake.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mod/mobile/shake1d902c.js','mod/mobile/template.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mod/mobile/template1d902c.js','mod/mobile/sha1.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mod/mobile/sha11d902c.js','mod/mobile/date.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mod/mobile/date1d902c.js','mod/mobile/shift.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mod/mobile/shift1d902c.js','mod/mobile/countdown.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mod/mobile/countdown1d902c.js','mod/mobile/speed.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mod/mobile/speed1d902c.js','mod/mobile/crypt.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mod/mobile/crypt1d902c.js','mod/mobile/touch.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/mod/mobile/touch1d902c.js','open/common/wx/clientCode.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/clientCode1d902c.js','open/common/wx/linktip.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/linktip1d902c.js','tpl/linktip.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/linktip.html.js','open/common/wx/step.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/step1d902c.js','widget/processor_bar.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/widget/processor_bar.css','open/common/wx/process.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/process1d902c.js','widget/processor.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/widget/processor.css','tpl/process.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/process.html.js','open/common/wx/resMenu.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/resMenu1d902c.js','open/common/wx/_Tips.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/_Tips1d902c.js','open/common/wx/Tips.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/Tips1d902c.js','open/common/wx/region.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/region1d902c.js','common/wx/dropdown.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/dropdown.js','open/common/wx/upload.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/upload1d902c.js','common/lib/uploadify.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/lib/uploadify.js','widget/upload.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/widget/upload.css','common/lib/swfobject.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/lib/swfobject.js','common/qq/jquery.plugin/Cookie.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/qq/jquery.plugin/Cookie.js','open/common/wx/checkbox.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/checkbox1d902c.js','tpl/checkbox.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/checkbox.html.js','open/common/wx/openLogin.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/openLogin1d902c.js','common/lib/jquery.validate.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/lib/jquery.validate.js','common/wx/checkbox.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/checkbox.js','common/lib/jquery.md5.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/lib/jquery.md5.js','common/wx/route.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/route.js','open/common/wx/dropdown.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/dropdown1d902c.js','widget/dropdown_menu.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/widget/dropdown_menu.css','tpl/dropdown.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/tpl/dropdown.html.js','open/common/wx/route.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/route1da73c.js','open/common/wx/verifycode.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/verifycode1d902c.js','open/common/wx/dialog.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/dialog1d902c.js','common/lib/jquery.ui.draggable.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/lib/jquery.ui.draggable.js','open/common/wx/Cgi.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/Cgi1d902c.js','common/lib/MockJax.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/lib/MockJax.js','open/common/wx/popup.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/wx/popup1d902c.js','open/common/qq/events.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/qq/events1d902c.js','open/common/qq/Class.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/qq/Class1d902c.js','open/common/qq/mask.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/qq/mask1d902c.js','common/lib/spin.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/lib/spin.js','open/common/lib/datepicker.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/lib/datepicker1d902c.js','widget/datepicker.css': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/style/widget/datepicker.css','open/common/lib/template.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/lib/template1d902c.js','open/common/lib/MockJax.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/lib/MockJax1d902c.js','open/common/lib/uploadify.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/lib/uploadify1d902c.js','open/common/lib/jquery.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/lib/jquery1d902c.js','open/common/lib/moment.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/lib/moment1d902c.js','open/common/lib/jquery.ui.draggable.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/lib/jquery.ui.draggable1d902c.js','open/common/lib/jquery.md5.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/lib/jquery.md51d902c.js','open/common/lib/swfobject.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/lib/swfobject1d902c.js','open/common/lib/jquery.validate.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/lib/jquery.validate1d902c.js','open/common/lib/json.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/lib/json1d902c.js','open/common/lib/spin.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/common/lib/spin1d902c.js','open/payApply/businessMenu.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/payApply/businessMenu1d902c.js','open/payApply/fiance.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/payApply/fiance20a2fd.js','common/wx/process.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/wx/process.js','open/payApply/baseInfo.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/payApply/baseInfo2074b1.js','common/lib/json.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/common/lib/json.js','open/payApply/businessInfo.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/payApply/businessInfo1e05d4.js','open/payApply/index.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/payApply/index1faa76.js','open/tpl/linktip.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/tpl/linktip.html1d902c.js','open/tpl/step.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/tpl/step.html1d902c.js','open/tpl/uploader.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/tpl/uploader.html1d902c.js','open/tpl/dropdown.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/tpl/dropdown.html1d902c.js','open/tpl/process.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/tpl/process.html1d902c.js','open/tpl/dialog.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/tpl/dialog.html1d902c.js','open/tpl/verifycode.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/tpl/verifycode.html1d902c.js','open/tpl/popup.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/tpl/popup.html1d902c.js','open/tpl/nav.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/tpl/nav.html1d902c.js','open/tpl/checkbox.html.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/open/tpl/checkbox.html1d902c.js','demo/demo.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/demo/demo1d902c.js','lib/jquery/1.11/jquery-1.11.0.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/lib/jquery/1.11/jquery-1.11.01d902c.js','lib/pc/global.js': 'https://res.wx.qq.com/paymchres/zh_CN/htmledition/js/lib/pc/global1d902c.js'};</script>
+        <script type="text/javascript" src="sea1fb027.js"></script>  
+<script type="text/javascript" src="lib1d902c.js"></script>	
+<script type="text/javascript">
+    window.wx ={
+        version:"4.0.0",
+        data:{
+            t:"145239729",
+            ticket:"",
+            lang:'zh_CN',
+            param:["&token=145239729",'&lang=zh_CN'].join(""),
+            uin:"",
+            user_name:"",
+            service_type:"",
+            nick_name:"",
+            sys_notify_cnt:"",
+            time:""||new Date().getTime()/1000
+        },
+        path:{
+            video : "https://res.wx.qq.com/paymchres/zh_CN/htmledition/swf/mp/biz_web/video-js1d8a38.swf",    
+            audio : "https://res.wx.qq.com/paymchres/zh_CN/htmledition/swf/mp/biz_web/audiojs1d8a38.swf",
+            uploadify : "https://res.wx.qq.com/paymchres/zh_CN/htmledition/swf/mp/biz_web/uploadify1d8a38.swf",
+            rimgcrop : "https://res.wx.qq.com/paymchres/zh_CN/htmledition/images/mp/cut-round1d8a38.gif"
+        },
+        acl:{
+                    },
+        events:{}//全局的事件绑定
+    };
+    window.wx.urlPath = {
+        "business/index" : "/cgi-bin/frame?t=business/index_frame&iframe=" + encodeURIComponent("/paymch/business?t=business/index&action=index") + "&nav=10010&hide=0",
+        "business/info" : "/cgi-bin/frame?t=business/index_frame&iframe=" + encodeURIComponent("/paymch/business?t=business/info&action=info") + "&nav=10010&hide=0",
+		"business/dev" : "/cgi-bin/frame?t=business/index_frame&iframe=" + encodeURIComponent("/paymch/business?t=business/whitelist&action=whitelist") + "&nav=10010&hide=0"
+    };
+    if(location.port != ""){
+        window.wx.urlPath = {
+            "business/index" : "/paymch/business?t=business/index&action=index",
+            "business/info" : "/paymch/business?t=business/info&action=info",
+            "business/dev" : "/paymch/business?t=business/whitelist&action=whitelist"
+        };
+    }
+    $("body").on('click', '.jsUrlLink', function(event) {
+        //如果跳转需要登录态，触发点击登录逻辑
+        var node = $(this);
+        var url = node.data("url");
+        var target = node.attr("target");
+        var param = [
+            "lang=zh_CN",
+            "token=" + (window.wx.data.t || "")
+        ];
+        if (url && window.wx.urlPath[url]) {
+            url = window.wx.urlPath[url] + "&" + param.join("&");
+            if (target == "_blank") {
+                window.open(url);
+            } else {
+                window.location = url;
+            }
+        }
+        return false;
+    });
+</script>
+<script type="text/javascript" src="wx1f45dc.js"></script>	
+
+        <script>
+                var script_begin = (+(new Date()));
+        </script>
+        
+
+<script type="text/javascript">var page_dom_load_id = 23550, page_dom_load_key = 72;
+var page_onload_id = 23550, page_onload_key = 73;
+var page_js_script_id = 23550, page_js_script_key = 74;
+var page_ava_id = 23550, page_ava_key = 75;</script>
+<script type="text/javascript">
+    wx.cgiData={
+        //是否正常合同用户，非标准合同有特殊提示
+        normal:""==1,
+        //合同状态 2为未准备好
+        contractStatus:"0",
+		//承诺函状态 0为未准备好
+        acknowledgeStatus:"0"||"0"
+    };
+    seajs.use('payApplyV2/index', wx_main);;
+</script>
+
+        <script>
+            function getico(i){
+                var _img = new Image(1, 1);
+                _img.src = wx.url(location.protocol + "//" + location.host + "/misc/getico" + "?location=" + (i||-1) + "&rand=" + Math.random());
+            };
+            //test rockyli
+            //getico('');
+            
+            console.log("DOM Loaded Time : " + (mp.time.domLoaded - mp.time.begin) + " ms");
+            if (typeof page_dom_load_id != "undefined" && typeof page_dom_load_key != "undefined"){
+                wx_save_report(page_dom_load_id, page_dom_load_key, mp.time.domLoaded - mp.time.begin);
+            }
+            window.onload = function(){
+                mp.time.allResLoaded = (+new Date());
+                
+                console.log('All Res Loaded Time : %s ms'.sprintf(mp.time.allResLoaded - mp.time.begin));
+                if (typeof page_onload_id != "undefined" && typeof page_onload_key != "undefined"){
+                    wx_save_report(page_onload_id, page_onload_key, mp.time.allResLoaded - mp.time.begin);
+                }
+                //test rockyli
+                //wx_report();
+            };
+            //adjust height
+            var heightTimeOut = 200;
+            var minHeight = 650;
+            var preHeight = 0;
+            var adjustFrameSize = function(){
+                try{
+                    var iHeight1 = document.body.scrollHeight;
+                    var iHeight2 = document.documentElement.scrollHeight;
+                    var iBodyHeight = document.getElementsByTagName("body")[0].offsetHeight;
+                    height = Math.max(iHeight1, iHeight2);
+                    height = Math.min(height, iBodyHeight);
+                    if(height < minHeight){
+                        height = minHeight;
+                    }
+                    if(height != preHeight){
+                        parent.document.getElementById("mpIFrame").style.height = height + "px";
+                        preHeight = height;
+                        console.log(height);
+                    }
+                }catch(e){
+                }
+                setTimeout(function(){
+                    adjustFrameSize();
+                }, heightTimeOut);
+            }
+            adjustFrameSize();
+        </script>
+	
+
+
+
+
+</body></html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0362)https://security.cgi.piao.qq.com/cgi-bin/mcs/php/index.php/mpjumpcontrl/mpjump/index?virsion=20140501&pluginid=duokefu&token=UfVxzncZsmsSx7uEslBB-byFi7MVZaMcYlN1fU0swfeB9tNSFQPr-kL1CeyQPn7IwDfFyZHn8K1KePgP0BkP5jONZ35qsRrPQmoZBqhnV-KlfLos3V-XOVSyZX9G5r_8&appid=wxa3ab354bb9cee3e9&jsurl=https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/messenger1ec5f7.js -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="Content-Language" content="zh-cn">
+        <meta name="description" content="多客服">
+        <meta name="keywords" content="多客服">
+        <title>多客服</title>
+        <link rel="stylesheet" href="style-dkf-mp-flat.css" type="text/css" media="screen">
+    </head>
+     <body class="zh_CN" style="background-color:#FFF">
+         <div class="mod-weixin-area" id="body">
+             <div class="mod-weixin-area__body" id="my_cont">
+                 <div class="mod-dkf-setting-head" style="">
+                     <div class="mod-dkf-setting-head__icon"></div>
+                         一个公众帐号多个客服同时服务，帮你轻松解决客服问题，不错过任何一个订单；<br>
+                         若您具备开发能力，可通过<a href="https://crm1.dkf.qq.com/php/static/mp/html/appthird.20140626.html?t=2014072901&jsurl=https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/messenger1ec5f7.js" id="appthirdsetbtn">客户端高级设置</a>，开发更丰富的客服信息服务功能；
+                         <a href="http://crm.mp.weixin.qq.com/cgi-bin/dkf_download_url" target="blank" class="mod-dkf-setting-head__download button button_default">下载客户端</a>
+                 </div>
+                 <div class="mod-sep-30"></div>
+                 <div class="ui-pl-xlarge ui-pr-xlarge ui-clearfix">
+                     <a href="javascript:;" class="button button_primary button_p20 ui-fl-r" id="btnShowAddEmployee">
+                         <i class="icon icon_add"></i>添加客服工号
+                     </a>
+                 </div>
+                 <div class="mod-sep-20"></div>
+                 <div class="ui-pl-xlarge ui-pr-xlarge ui-pt-xsmall" id="tableEmployeeList">            <table class="mod-basic-table">                            <colgroup>                                <col style="">                                <col style="width: 280px">                                <col style="width: 280px">                                <col style="width: 100px">                            </colgroup>                            <thead class="thead">                            <tr>                                <th class="ui-ta-l">序号</th>                                <th class="ui-ta-l">工号</th>                                <th class="ui-ta-l">昵称</th>                                <th class="ui-ta-c">操作</th>                            </tr>                            </thead>                            <tbody class="tbody">                                        <tr class="" id="tr_03zxrqm">                                <td class="ui-ta-l">1</td>                                <td class="ui-ta-l">03zxrqm</td>                                <td class="ui-ta-l">名吉祥瑞</td>                                <td>                                    <a href="javascript:;" eid="03zxrqm" action="modify" class="ui-mr-medium">修改</a>                                    <a href="javascript:;" eid="03zxrqm" action="delete">删除</a>                                </td>                            </tr>                        <tr class="" id="tr_02xinrui">                                <td class="ui-ta-l">2</td>                                <td class="ui-ta-l">02xinrui</td>                                <td class="ui-ta-l">心诚德福</td>                                <td>                                    <a href="javascript:;" eid="02xinrui" action="modify" class="ui-mr-medium">修改</a>                                    <a href="javascript:;" eid="02xinrui" action="delete">删除</a>                                </td>                            </tr>                        <tr class="" id="tr_01">                                <td class="ui-ta-l">3</td>                                <td class="ui-ta-l">01</td>                                <td class="ui-ta-l">心瑞居士</td>                                <td>                                    <a href="javascript:;" eid="01" action="modify" class="ui-mr-medium">修改</a>                                    <a href="javascript:;" eid="01" action="delete">删除</a>                                </td>                            </tr>                                        </tbody>                        </table>            </div>
+                 <div class="ui-pl-xlarge ui-pr-xlarge ui-pt-xsmall" id="divNoEmployeeTips" style="display: none;">
+                     <table class="mod-basic-table">
+                            <colgroup>
+                                <col style="">
+                                <col style="width: 280px">
+                                <col style="width: 280px">
+                                <col style="width: 100px">
+                            </colgroup>
+                            <thead class="thead">
+                            <tr>
+                                <th class="ui-ta-l">序号</th>
+                                <th class="ui-ta-l">工号</th>
+                                <th class="ui-ta-l">昵称</th>
+                                <th class="ui-ta-c">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="tbody">
+                            <tr class="">
+                                <td colspan="10" class="empty_tips">你尚未添加任何客服，<a href="javascript:;" id="btnCreateWorker">立刻添加</a></td>
+                            </tr>
+                            </tbody>
+                     </table>
+                 </div>
+                 <div class="mod-sep-10"></div>
+                 <div class="mod-sep-30"></div>
+             </div>      
+         </div>
+         <div class="msg" id="divSessionErr" style="display:none;"></div>
+         <div id="divTemplateList" style="display:none">
+            <!--以下注释内容为JS模板请不要删除-->
+            <!--MPSessionErrTipInner
+            <div class="msg_box inner group">
+            <span class="msg_icon_wrapper"><i class="user-icon error-icon"></i></span>
+            <div class="msg_content">
+            <h4 class="msg_t">{#msgtitle#}</h4>
+            <p class="msg_text">
+            {#msgtext#}
+            </p>
+            </div>
+            </div>
+            MPSessionErrTipInner-->
+            <!--helpWndOuter
+            <div class="dialog">
+            <div class="title">
+            多客服使用指南<a class="close-tip-icon" id="btnEmployeeCancel2" style="display:block;" href="javascript:;" title="关闭"></a>
+            </div>
+            <div class="content ui-dialog__bd">
+            <div>
+            <div>
+            <span class="num1"></span>
+            <span class="content-div2">
+            <div class="default-title3">创建一个客服工号，例如123243@mphao</div>
+            <div class="addsucc"></div>
+            </span>
+            </div>
+            <div>
+            <span class="num2"></span>
+            <span class="content-div2">
+            <div class="default-title3">安装客户端软件"多客服"</div>
+            <div class="default-sub-title2">创建客服号可以通过登录多客服客户端与用户沟通</div>
+            <div><a class="help-downloadbtn" href="http://crm.mp.weixin.qq.com/cgi-bin/dkf_download_url">多客服PC客户端下载</a></div>
+            </span>
+            </div>
+            <div>
+            <span class="num3"></span>
+            <span class="content-div2" style="padding-bottom:5px">
+            <div class="default-title3">登录"多客服"</div>
+            <div class="default-sub-title2">将创建的客服工号和密码输入如下图所示的登录框,就可以进入客服系统</div>
+            <div class="crmlogin"></div>
+            </span>
+            </div>
+            </div>
+            </div>
+            </div>
+            helpWndOuter-->
+            <!--helpWndInner
+            <div class="help-div">
+            <div class="default-title">多客服使用指南<a class="ui_btn" id="btn_help_return" style="margin-left: 240px;display:none;">返回</a></div>
+            <div>
+            <span class="num1"></span>
+            <span class="content-div">
+            <div class="default-title2">创建一个客服工号，例如123243@mphao</div>
+            <div class="addsucc"></div>
+            </span>
+            </div>
+            <div>
+            <span class="num2"></span>
+            <span class="content-div">
+            <div class="default-title2">安装客户端软件"多客服"</div>
+            <div class="default-sub-title">创建客服号可以通过登录多客服客户端与用户沟通</div>
+            <div><a class="help-downloadbtn" href="http://crm.mp.weixin.qq.com/cgi-bin/dkf_download_url">多客服PC客户端下载</a></div>
+            </span>
+            </div>
+            <div>
+            <span class="num3"></span>
+            <span class="content-div" style="padding-bottom:10px">
+            <div class="default-title2">登录"多客服"</div>
+            <div class="default-sub-title">将创建的客服工号和密码输入如下图所示的登录框,就可以进入客服系统</div>
+            <div class="crmlogin"></div>
+            </span>
+            </div>
+            </div>
+            helpWndInner-->
+            <!--employeeTable
+            <table class="mod-basic-table">
+                            <colgroup>
+                                <col style=""/>
+                                <col style="width: 280px"/>
+                                <col style="width: 280px"/>
+                                <col style="width: 100px"/>
+                            </colgroup>
+                            <thead class="thead">
+                            <tr>
+                                <th class="ui-ta-l">序号</th>
+                                <th class="ui-ta-l">工号</th>
+                                <th class="ui-ta-l">昵称</th>
+                                <th class="ui-ta-c">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="tbody">
+                            {#employeeList#}
+                            </tbody>
+                        </table>
+            employeeTable-->
+            <!--employeeDataTr
+            <tr class="" id="tr_{#account#}">
+                                <td class="ui-ta-l">{#count#}</td>
+                                <td class="ui-ta-l">{#account#}</td>
+                                <td class="ui-ta-l">{#name#}</td>
+                                <td >
+                                    <a href="javascript:;" eid="{#account#}" action="modify" class="ui-mr-medium">修改</a>
+                                    <a href="javascript:;" eid="{#account#}" action="delete">删除</a>
+                                </td>
+                            </tr>
+            employeeDataTr-->
+
+            <!--employeeNoQueryData
+            <tr>
+            <td colspan="5">
+            <div class="tb_tips_wp">
+            <p>抱歉，没有找到和“{#queryKey#}”相关的记录</p>
+            <p>您可以 <a href="javascript:;" action="add">添加工号</a> 或 <a href="javascript:;" action="list">返回工号列表</a></p>
+            </div>
+            </td>
+            </tr>
+            employeeNoQueryData-->
+            <!--authSelectItem
+            <dt><input type="checkbox" group="{#auth#}" />{#roleName#}</dt><dd><ul class="check_list">{#authList#}</ul></dd>
+            authSelectItem-->
+            <!--authSelectChildItem
+            <li><label for="ckbAuth{#authId#}"><input type="checkbox" id="ckbAuth{#authId#}" />{#authName#}</label></li>
+            authSelectChildItem-->
+            <!--roleSelectItem
+            <ul class="check_list {#cusRole#}">{#roleList#}</ul>
+            roleSelectItem-->
+            <!--roleSelectChildItem
+            <li rid="{#roleId#}"><label for="ckbRole{#roleId#}"><input type="checkbox" id="ckbRole{#roleId#}" />{#roleName#}</label></li>
+            roleSelectChildItem-->
+            <!--addEmployee
+            <div class="mod-dialog" style="width: 760px; min-height: 450px; ">
+            <div class="mod-dialog__head">
+            <h3>添加客服工号</h3>
+            <a href="javascript:;" class="mod-dialog__close" id="btnEmployeeCancel2">关闭</a>
+            </div>
+            <div class="mod-dialog__body mod-dialog__body_padding">
+            <div class="mod-form" style="width: 480px; margin: 0 auto;">
+            <div class="mod-form__group">
+            <label class="mod-form__label">工号</label>
+            <div class="mod-form__controls">
+            <span class="mod-form__box">
+            <input type="text" class="input" placeholder="请输入登录帐号" id="txtEmployeeAccount" maxlength="10">@{#employerAccount#}
+            </span>
+            <p class="mod-form__msg mod-form__msg_fail" id="tipEmployeeAccount" style="display:none"></p>
+            <p class="mod-form__msg">工号不能重复，一旦输入不能修改，由字母、数字组成</p>
+            </div>
+            </div>
+            <div class="mod-form__group">
+            <label class="mod-form__label">昵称</label>
+            <div class="mod-form__controls">
+            <span class="mod-form__box">
+            <input type="text" class="input" id="txtEmployeeNickName" maxlength="12">
+            </span>
+            </div>
+            </div>
+            <div class="mod-form__group">
+            <label for="" class="mod-form__label">密码</label>
+            <div class="mod-form__controls">
+            <span class="mod-form__box">
+            <input type="password" class="input" id="txtEmployeePassword" maxlength="16">
+            </span>
+            <p class="mod-form__msg">请输入6～16位的密码</p>
+            <p id="tipEmployeePassword" style="display:none" class="mod-form__msg mod-form__msg_fail"></p>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="mod-dialog__footer">
+            <a href="javascript:;" class="button button_primary ui-mr-medium" id="btnAddEmployee">确认添加</a>
+            <a href="javascript:;" class="button button_default" id="btnEmployeeCancel">取消</a>
+            </div>
+            </div>
+            addEmployee-->
+            <!--modifyEmployee
+            <div class="dialog">
+            <div class="title">修改信息<a class="close-tip-icon" id="btnEmployeeCancel2" style="display:block;" href="javascript:;" title="关闭"></a></div>
+            <div class="content ui-dialog__bd">
+            <div class="name">工号</div>
+            <div class="cont notice usr_name">
+            {#account#}@{#employerAccount#}
+            </div>
+            <div class="name">昵称</div>
+            <div class="cont">
+            <input class="usr_add_inp" type="text" id="txtEmployeeNickName" maxlength="12" /><p  id="tipEmployeeNickName" style="display:none"></p>
+            </div>
+            </div>
+            <div class="operation">
+            <p><button id="btnEditEmployee" class="btn btnGreen">确认修改</button><button  id="btnEmployeeCancel"  class="btn btnGray">取消</button></p>
+            </div>
+            </div>
+            modifyEmployee-->
+            <!--modifyEmployeeInfo
+                        <div class="mod-dialog" style="width: 760px; min-height: 450px; ">
+                        <div class="mod-dialog__head">
+                            <h3>修改信息</h3>
+                            <a href="javascript:;" class="mod-dialog__close"  id="btnEmployeeCancel2" >关闭</a>
+                        </div>
+                        <div class="mod-dialog__body" style=" width: 389px; margin: 0 auto; padding-top: 85px;">
+                                <div class="mod-form"  style="width: ">
+                                    <div class="mod-form__group">
+                                        <label class="mod-form__label">
+                                            工号
+                                        </label>
+                                        <div class="mod-form__controls">
+                                            {#account#}@{#employerAccount#}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mod-form__group">
+                                    <label class="mod-form__label">
+                                        昵称
+                                    </label>
+                                    <div class="mod-form__controls">
+                                        <span class="mod-form__box">
+                                           <input type="text" class="input" id="txtEmployeeNickName"  maxlength="12" value="{#nickname#}" flag="0">
+                                        </span>
+                                        <p id="tipEmployeeNickName" style="display:none" class="frm_msg fail"></p>
+                                    </div>
+                                </div>
+                                <div class="mod-form__group">
+                                    <label class="mod-form__label">
+                                        新密码
+                                    </label>
+                                    <div class="mod-form__controls">
+                                        <span class="mod-form__box">
+                                           <input type="text" class="input" id="txtEmployeePassword"  maxlength="16" value="●●●●●●●●" flag="0">
+                                        </span>
+                                        <p id="tipEmployeePassword" style="display:none" class="mod-form__msg mod-form__msg_fail"></p>
+                                        <p class="mod-form__msg">请输入6～16位的密码</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mod-dialog__footer">
+                                <a href="javascript:;" class="button button_primary ui-mr-medium" id="btnModifyEmployee">确认</a>
+                                <a href="javascript:;" class="button button_default" id="btnEmployeeCancel">取消</a>
+                        </div>
+                    </div>
+            modifyEmployeeInfo-->
+            <!--overEmployeeMaxTip
+            <div class="usr_add ">
+            <div class="ui-dialog__hd ">提示</div>
+            <div class="box_hint_normal ui-dialog__bd">
+            <span class="icon msg3-icon-warn"></span>
+            <p class="hint_title"><strong>您的工号已达到添加的上限（{#maxCount#}个）</strong></p>
+            <p class="remark_cont">请删除部分工号再添加</p>
+            <hr class="qb_hr"/>
+            </div>
+            <div class="ui-dialog__ft"><a class="ui_btn ui_btn_strong" href="javascript:;" id="btnClose">关闭</a></div>
+            </div>
+            overEmployeeMaxTip-->
+            <!--delEmployee
+            <div class="mod-popover" style="width: 300px;">
+    <div class="mod-popover__inner">
+        <div class="mod-popover__content">确定要删除{#emnick#}吗</div>
+        <div class="mod-popover__bar">
+            <a href="javascript:;" class="button button_primary button_small" id="confirmbtn">
+                确定
+            </a>
+            <a href="javascript:;" class="mod-popover__bar-action-right button button_default button_small" id="cancelbtn">
+                取消
+            </a>
+        </div>
+    </div>
+    <div class="mod-popover__arrow-box" style="right: 50px;">
+        <i class="mod-popover__arrow mod-popover__arrow_out"> </i>
+        <i class="mod-popover__arrow mod-popover__arrow_in"> </i>
+    </div>
+</div>
+            delEmployee-->
+            <!--setWeixinAlias
+            <div class="dialog">
+            <div class="title">设置微信号<a class="close-tip-icon" id="btnEmployeeCancel2" style="display:block;" href="javascript:;" title="关闭"></a></div>
+            <div class="content ui-dialog__bd">
+            <div class="name">微信号：</div>
+            <div class="cont">
+            <input class="usr_add_inp" type="text" id="txtWeixinalias" maxlength="20" /><p  id="tipWeixinalias" style="display:none"></p>
+            <p class="remark_cont">设置微信号后将无法更改</p>
+            <p class="remark_cont">可以设置6~20个字母、数字、下划线和减号,必须以字母开头</p>
+            </div>
+            </div>
+            <div class="operation">
+            <p><button id="btnEditEmployee" class="btn btnGreen">确认修改</button><button  id="btnEmployeeCancel"  class="btn btnGray">取消</button></p>
+            </div>
+            setWeixinAlias-->
+            <!--addEmployeeSucc
+            <div class="mod-dialog" style="width: 760px; min-height: 450px; ">
+    <div class="mod-dialog__head">
+        <h3>成功创建客服工号</h3>
+        <a href="javascript:;" class="mod-dialog__close" id="btnEmployeeCancel2">关闭</a>
+    </div>
+    <div class="mod-dialog__body" style="padding-top: 85px;">
+        <div style="width: 405px; margin: 0 auto;">
+            <p>恭喜您成功创建了一个新的客服号，请牢记对应的帐号。</p>
+            <p>您可以使用以下账户信息登录【多客服客户端】与用户进行对话</p>
+            <p>&nbsp;</p>
+            <p>帐号： {#account#}@{#employerAccount#}</p>
+            <p>昵称： {#nickname#}</p>
+            <p>密码： {#password#}</p>
+        </div>
+    </div>
+    <div class="mod-dialog__footer">
+        <a href="javascript:;" id="btnEmployeeCancel" class="button button_primary ui-mr-medium">确认</a>
+    </div>
+</div>
+            addEmployeeSucc-->
+            <!--modifyEmployeeSucc
+            <div class="mod-dialog" style="width: 760px; min-height: 450px;">
+    <div class="mod-dialog__head">
+        <h3>修改客服信息</h3>
+        <a href="javascript:;" class="mod-dialog__close" id="btnEmployeeCancel">关闭</a>
+    </div>
+    <div class="mod-dialog__body" style="padding-top: 85px;">
+        <div style="width: 405px; margin: 0 auto;">
+            <div>
+            {#wording#}
+            </div>
+            <div class="info-tips">
+            {#tips#}
+            </div>
+        </div>
+    </div>
+    <div class="mod-dialog__footer">
+        <a href="javascript:;" id="btnEmployeeCancel2" class="button button_primary ui-mr-medium">关闭</a>
+    </div>
+</div>
+            modifyEmployeeSucc-->
+            <!--modifyEmployeeSuccUnit
+            <div class="info-unit">
+            <lable class="info-name">{#name#}</lable>
+            <span  class="info-value">{#value#}</span>
+            </div>
+            modifyEmployeeSuccUnit-->
+            <!--maxEmployeeTip
+    <div class="mod-dialog" style="width: 760px; min-height: 450px;">
+            <div class="mod-dialog__head">
+                <h3>温馨提示</h3>
+                <a href="javascript:;" class="mod-dialog__close" id="btnEmployeeCancel2">关闭</a>
+            </div>
+            <div class="mod-dialog__body" style="padding-top: 130px;">
+              <div style="width: 620px; margin: 0 auto;">
+                <div class="mod-page-msg">
+                    <div class="mod-page-msg__inner">
+                        <i class="mod-page-msg__icon_flat mod-page-msg__icon_flat_warn"></i>
+                        <div class="mod-page-msg__content">
+                            <div class="msg-page-msg__title">您的客服数量已达上限，无法添加新客服</div>
+                            <div class="msg-page-msg__desc">如需添加更多客服，请注明联系方式和申请理由，审核后与你联系</div>
+                        </div>
+                    </div>
+                </div>
+               </div>
+            </div>
+            <div class="mod-dialog__footer">
+                <a href="http://support.qq.com/write.shtml?fid=1048" target="blank" class="button button_primary ui-mr-medium" id="btnEmployeeCancel">申请新增客服</a>
+                <a href="javascript:;" class="button button_default" id="btnEmployeeCancel3">取消</a>
+            </div>
+        </div>
+            maxEmployeeTip-->
+           <!--ErrAlertTip
+           <div class="mod-dialog" style="width: 760px; min-height: 450px;">
+        <div class="mod-dialog__head">
+            <h3>提示</h3>
+            <a href="javascript:;" class="mod-dialog__close" id="btnEmployeeCancel2">关闭</a>
+        </div>
+        <div class="mod-dialog__body" style="padding-top: 130px;">
+            <div style="width: 480px; margin: 0 auto;">
+                <div class="mod-page-msg">
+                    <div class="mod-page-msg__inner">
+                        <i class="mod-page-msg__icon_flat mod-page-msg__icon_flat_warn"></i>
+                        <div class="mod-page-msg__content">
+                            <div class="msg-page-msg__desc"><h4> {#word#}</h4></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mod-dialog__footer">
+            <a href="javascript:;" class="button button_primary ui-mr-medium" id="btnEmployeeCancel">确认</a>
+        </div>
+    </div>
+            ErrAlertTip-->
+         </div>
+    
+
+<script type="text/javascript">
+function $xss(str,type){if(!str){return str===0?"0":"";}
+switch(type){case"html":return str.replace(/[&'"<>\/\\\-\x00-\x09\x0b-\x0c\x1f\x80-\xff]/g,function(r){return"&#"+r.charCodeAt(0)+";"}).replace(/ /g," ").replace(/\r\n/g,"<br />").replace(/\n/g,"<br />").replace(/\r/g,"<br />");break;case"htmlEp":return str.replace(/[&'"<>\/\\\-\x00-\x1f\x80-\xff]/g,function(r){return"&#"+r.charCodeAt(0)+";"});break;}}
+ var url = location.href.match(/(?:\?|&)jsurl=([^&$]*)/);
+    if (url && url[1]) {
+        var jsurl = url[1];
+        if (jsurl.indexOf("https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/")==0) {
+           document.write('<script src="' + $xss(jsurl,'htmlEp') + '"></' + 'script>');
+           document.cookie = 'jsurl=' + jsurl;
+        };
+    } else {
+        url = document.cookie.match(/jsurl=([^;$]*)/);
+        if (url && url[1]) {
+            var jsurl = url[1];
+            if (jsurl.indexOf("https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/")==0) {
+                document.write('<script src="' +  $xss(jsurl,'htmlEp') + '"></' + 'script>');
+            }
+        }
+    }
+   document.getElementById("appthirdsetbtn").href="https://crm1.dkf.qq.com/php/static/mp/html/appthird.20140626.html?t=2014072901&jsurl="+jsurl;
+</script><script src="messenger1ec5f7.js"></script>
+<script>window["BBC.mcs.mpAuth.time"] = [new Date()]</script>
+<script id="legos:21343" ver="21343:20130530:20130627200011" name="BBC.mcs.mpAuth" src="bbs.mcs.mpAuth.20140626.js" charset="utf-8"></script><!--[if !IE]>|xGv00|d383a8796da21655cec2847dbe7a2da0<![endif]--></body></html>
