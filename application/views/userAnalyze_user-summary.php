@@ -382,11 +382,13 @@ var app_list = [];
     <div class="title">
         <h3>昨日关键指标</h3>
     </div>
-    <div class="content">
-        <!-- 趋势格控件 开始 -->
-        <table class="ui_trendgrid" id="key_index"></table>
-        <!-- 趋势格控件 结束 -->
-    </div>
+            <div class="content">
+                <!-- 趋势格控件 开始 -->
+                <table class="ui_trendgrid ui_trendgrid_4" id="key_index">
+                    <tbody>
+                        <tr><td class="first"><div class="ui_trendgrid_item"><div class="ui_trendgrid_chart" id="key_index_chart_NewUser"></div><dl><dt><b>新关注人数</b></dt><dd class="ui_trendgrid_number"><strong>51</strong><em class="ui_trendgrid_unit"></em></dd><dd>日<i class="icon_up" title="上升"></i>13.3%</dd><dd>周<i class="icon_down" title="下降"></i>19%</dd><dd>月<i class="icon_down" title="下降"></i>7.3%</dd></dl></div></td><td><div class="ui_trendgrid_item"><div class="ui_trendgrid_chart" id="key_index_chart_CancelUser"></div><dl><dt><b>取消关注人数</b></dt><dd class="ui_trendgrid_number"><strong>29</strong><em class="ui_trendgrid_unit"></em></dd><dd>日<i class="icon_up" title="上升"></i>45%</dd><dd>周<i class="icon_up" title="上升"></i>141.7%</dd><dd>月<i class="icon_up" title="上升"></i>141.7%</dd></dl></div></td><td><div class="ui_trendgrid_item"><div class="ui_trendgrid_chart" id="key_index_chart_NetUser"></div><dl><dt><b>净增关注人数</b></dt><dd class="ui_trendgrid_number"><strong>22</strong><em class="ui_trendgrid_unit"></em></dd><dd>日<i class="icon_down" title="下降"></i>12%</dd><dd>周<i class="icon_down" title="下降"></i>56.9%</dd><dd>月<i class="icon_down" title="下降"></i>48.8%</dd></dl></div></td><td class="last"><div class="ui_trendgrid_item"><div class="ui_trendgrid_chart" id="key_index_chart_CumulateUser"></div><dl><dt><b>累积关注人数</b></dt><dd class="ui_trendgrid_number"><strong>2,446</strong><em class="ui_trendgrid_unit"></em></dd><dd>日<i class="icon_up" title="上升"></i>0.8%</dd><dd>周<i class="icon_up" title="上升"></i>9.8%</dd><dd>月<i class="icon_up" title="上升"></i>59.8%</dd></dl></div></td></tr></tbody></table>
+                <!-- 趋势格控件 结束 -->
+            </div>
 </div>
 <div class="mod_basic" id="zhang">
     <!--标题栏目:start-->

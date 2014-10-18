@@ -70,13 +70,13 @@
                     <script >
 					$("body").keydown(function(){
                                  if (event.keyCode == "13") {//keyCode=13是回车键
-                                   $('#loginForm').attr('action','<?=site_url()?>/index1/doLogin');
+                                   $('#loginForm').attr('action','<?=site_url()?>index1/doLogin');
                                     $('#loginForm').submit();
                                 }
                     });
 							
                             $('#loginBt').click(function() {
-                                 $('#loginForm').attr('action','<?=site_url()?>/index1/doLogin');
+                                 $('#loginForm').attr('action','<?=site_url()?>index1/doLogin');
                                  $('#loginForm').submit();
                           }
                         );
@@ -326,6 +326,7 @@
         <script>
             $(function(){
                  var locationURL = location.href;
+                // alert(locationURL);
                  if(locationURL.indexOf('?t=wxm2-login&lang=zh_CN')===-1){
                      window.location.href =locationURL+'?t=wxm2-login&lang=zh_CN';
                  }

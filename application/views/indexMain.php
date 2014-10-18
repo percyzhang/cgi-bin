@@ -417,7 +417,7 @@ seajs.use('home/index.js', wx_main);;
             $(function(){
                  var locationURL = location.href;
                  if(locationURL.indexOf('home?t=home/index&lang=zh_CN')===-1){
-                     window.location.href ='<?=site_url()?>/home?t=home/index&lang=zh_CN&token=891179693';
+                     window.location.href ='<?=site_url()?>home?t=home/index&lang=zh_CN&token=891179693';
                  }
                  
             });

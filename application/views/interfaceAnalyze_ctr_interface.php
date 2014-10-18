@@ -292,11 +292,23 @@ var app_list = [];
                     指标说明
                     </span>
                 </span>
-                <span id="report_list" class="ui_menu"><button class="button button_link">日报<i class="icon_menu"></i></button><ul class="ui_menu_list" role="menu" aria-labelledby="dropdownMenu" style="display:none;"><li class="first"><a class="current" href="javascript:void(0);" value="day" tadindex="-1">日报</a></li><li class="last"><a href="javascript:void(0);" value="hour" tadindex="-1">小时报</a></li></ul></span>
+                <span id="report_list" class="ui_menu">
+                    <button class="button button_link">日报
+                        <i class="icon_menu"></i>
+                    </button>
+                    <ul class="ui_menu_list" role="menu" aria-labelledby="dropdownMenu" style="display:none;">
+                        <li class="first">
+                            <a class="current" href="javascript:void(0);" value="day" tadindex="-1">日报</a>
+                        </li>
+                        <li class="last">
+                            <a href="javascript:void(0);" value="hour" tadindex="-1">小时报</a>
+                        </li>
+                    </ul>
+                </span>
                 <span class="eventBread" id="sp_navigation" style="display:none">
                 </span>
                 <!-- 	概览页面报表单独控制 -->
-                            </div>
+               </div>
             <!---- 右上角指标说明浮层 start -->
             <div class="help" id="wrap_items_info" style="">
 <!--                <a class="toggle" href="javascript:;">显示/收起</a>
@@ -369,7 +381,12 @@ var app_list = [];
                     </div>
                 </div>
             </div>
-        </div><div style="margin:20px 30px 0;"><div class="ui_tips"><i class="icon_info"></i>接口分析仅统计了基础消息接口，暂未统计其他高级接口，请知悉。</div></div><!--end of mod_header-->
+        </div>
+        <div style="margin:20px 30px 0;">
+            <div class="ui_tips">
+                <i class="icon_info"></i>接口分析仅统计了基础消息接口，暂未统计其他高级接口，请知悉。
+            </div>
+        </div><!--end of mod_header-->
         <div class="mod_basic">
     <div class="title">
         <h3>昨日关键指标</h3>

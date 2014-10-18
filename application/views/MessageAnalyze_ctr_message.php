@@ -24,7 +24,7 @@
             width:60px;
         }
     </style>
-
+<link rel="stylesheet" type="text/css" href="<?=base_url()?>weixin/zhang.css" charset="utf-8">
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>weixin/global.css" charset="utf-8">
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>weixin/wechat_v3.css" charset="utf-8">
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>weixin/gri.controls.css" charset="utf-8">
@@ -368,7 +368,9 @@
                     </div>
                 </div>
             </div>
-        </div><!--end of mod_header-->
+        </div>
+        <div style="margin:20px 30px 0;"><div class="ui_tips"><i class="icon_info"></i>接口分析仅统计了基础消息接口，暂未统计其他高级接口，请知悉。</div></div>
+        <!--end of mod_header-->
         <div class="mod_basic">
     <div class="title">
         <h3>昨日关键指标</h3>

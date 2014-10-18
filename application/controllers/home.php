@@ -24,5 +24,6 @@ class Home extends  Base_Controller {
         $this ->load ->view("head");
         $this->showHead('home');
         $this->load->view('indexMain');
+        
     }
 }
