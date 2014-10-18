@@ -1,36 +1,48 @@
 <?php 
+require 'base_Controller.php';
 
-class Index1 extends CI_Controller {
+
+class Index1 extends Base_Controller {
        function __construct()
     {
         parent::__construct();
-        session_start();
+       // session_start();
         $this->load->helper('url');
         $this->load->model('User_model');
         $this->output->enable_profiler(false);
         $this->load->helper('string');
     }
+        //用户分析
         public function userAnalyze_user_summary(){
     
             $this->load->view("userAnalyze_user-summary");
         }
+        //消息分析
          public function messageAnalyze_ctr_message(){
     
             $this->load->view("MessageAnalyze_ctr_message");
         }
+        //接口分析
          public function interfaceAnalyze_ctr_interface(){
     
             $this->load->view("interfaceAnalyze_ctr_interface");
         }
+        
+        //加载图文分析页面
+        public function ctr_article_detail(){
+              $this->load->helper('url');
+            $this->load->view("ctr_article_detail");
+        }
+        
         
         public function toChart(){
 //            echo 'dddd';
             $this->load->view("chartTest");
         }
     
-        public function login(  ){
-            $this ->load ->view("loginpage" );
-        }
+//        public function login(  ){
+//            $this ->load ->view("loginpage" );
+//        }
         
         public function doLogin(){
             
@@ -46,6 +58,7 @@ class Index1 extends CI_Controller {
                 }
                  
                 $this->index();
+                //parent::index();
             }
             else{
                $this ->login();
@@ -123,13 +136,13 @@ class Index1 extends CI_Controller {
             $this ->load ->view("liuliang");
         }
         //masssendpage
-         public function masssendpage(){
-            $this->load->helper('url');
-            $this ->load ->view("head");
-             $this->showHead();
-            
-            $this ->load ->view("masssendpage");
-        }
+//         public function masssendpage(){
+//            $this->load->helper('url');
+//            $this ->load ->view("head");
+//             $this->showHead();
+//            
+//            $this ->load ->view("masssendpage");
+//        }
         
         public function materiaManager(){
             $this->load->helper('url');
@@ -213,7 +226,6 @@ class Index1 extends CI_Controller {
             $this->load->helper('url');
             $this ->load ->view("head");
              $this->showHead();
-            
             $this ->load ->view("userAnalyze");
         }
         //userDefinedMenu
@@ -227,7 +239,13 @@ class Index1 extends CI_Controller {
         //userManager
            public function userManager() {
                
-           //  echo $_GET['id'];  通过这样可以直接过去URL中的参数 如:
+           //  echo $_GET['pageidx'];  通过这样可以直接过去URL中的参数 如:
+               if(isset($_GET['pageidx'])){
+                   $_SESSION['pageidx'] = $_GET['pageidx'];
+               }
+               else{
+                   $_SESSION['pageidx'] = 1;
+               }
             //index.php?c=products&m=view&id=345
              $this->output->enable_profiler(false);
           // $this->output->set_content_type('application/html;charset=utf-8');
@@ -316,7 +334,7 @@ class Index1 extends CI_Controller {
      public function logout()
    {
       session_destroy();
-     $this ->login();
+      parent::login();
    }
         
 }

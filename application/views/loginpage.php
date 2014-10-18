@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <!-- saved from url=(0066)https://mp.weixin.qq.com/cgi-bin/loginpage?t=wxm2-login&lang=zh_CN -->
+ 
+
+
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript">
           var points=[(window.performance&&window.performance.timing&&window.performance.timing.navigationStart)||+new Date()];
@@ -320,7 +323,15 @@
         <script type="text/javascript" src="<?=base_url()?>weixin/login_new20550b.js">
         </script>
         <script type="text/javascript" src="<?=base_url()?>weixin/html5Report20a341.js"></script>
-        
+        <script>
+            $(function(){
+                 var locationURL = location.href;
+                 if(locationURL.indexOf('?t=wxm2-login&lang=zh_CN')===-1){
+                     window.location.href =locationURL+'?t=wxm2-login&lang=zh_CN';
+                 }
+                 
+            });
+        </script>
 
 
 

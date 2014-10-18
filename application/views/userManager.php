@@ -61,7 +61,7 @@
             <span class="page_num">
                 <label id='currentPageIndex'>1</label>
                 <span class="num_gap">/</span>
-                <label id='pageCount'>232</label>
+                <label id='pageCount'><?=  ceil($_SESSION['fansCount']/10) ?></label>
             </span>
         
         <a href="javascript:void(0);" class="btn page_next"><i class="arrow"></i></a>
@@ -193,7 +193,7 @@
                   //生成分组信息      
                    $(function(){
                      $.ajax({
-                        url : '<?=site_url()?>/report/getGroupList/zhang',
+                        url : '<?=site_url()?>/report/getGroupList/<?= $_SESSION['userid']?>',
                 type : 'POST',
                 dataType : 'json',
                 contentType: "application/x-www-form-urlencoded; charset=utf-8", 
@@ -202,7 +202,7 @@
                             $.each(data.groups, function(key, val) {
                                         //alert(key + '==>>' + val.groupname);
                                         
-                                        var groupURL= '<?=  site_url()?>/index1/userManager?t=user/index&pagesize=10&pageidx=0&type=0&groupid='+val.groupid+'&token=1693742123&lang=zh_CN';
+                                        var groupURL= '<?=  site_url()?>/index1/userManager?t=user/index&pagesize=10&pageidx=0&type=1&groupid='+val.groupid+'&token=1693742123&lang=zh_CN';
                                                 var tmpHtml ='<dd class="inner_menu_item ">'+
                                                  '<a href="'+groupURL+'" class="inner_menu_link" title="'+val.groupname+'">'+
                                                  '<strong>'+val.groupname+'</strong><em class="num">('+val.fansCount+')</em>'+
@@ -400,8 +400,19 @@ define('widget/pagination.css', [], function(){return null;});</script>-->
         if (r != null) return unescape(r[2]); return null;
     }
     var indexNum = getQueryString('pageidx');
-    if(indexNum == null){
+    if(indexNum == null || indexNum ==0){
        indexNum =1;
     }
+    
     $('label#currentPageIndex').text(indexNum);
+    
+    var tmpCurrentPageIndex = parseInt($('label#currentPageIndex').text());
+    if(tmpCurrentPageIndex >1){
+         $('a.btn.page_prev').show();
+    }
+    var pageCount = <?=  ceil($_SESSION['fansCount']/10) ?>;
+    if(tmpCurrentPageIndex === pageCount){
+        $('a.btn.page_next').hide();
+    }
+    
     </script>

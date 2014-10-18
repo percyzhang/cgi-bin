@@ -20,7 +20,7 @@ $(function(){
     $('a.btn.page_next').click(function(){
         var pageIndex = parseInt($('label#currentPageIndex').text())+1;
         //groupid = -1 代表所有用户组
-        var groupURL= mywx.getSiteURL()+'/index1/userManager?t=user/index&pagesize=10&pageidx='+pageIndex+'&type=0&groupid=-1&token=1693742123&lang=zh_CN';
+        var groupURL= mywx.getSiteURL()+'/contactmanage?t=user/index&pagesize=10&pageidx='+pageIndex+'&type=0&groupid=-1&token=1693742123&lang=zh_CN';
         window.location.href=groupURL;
          mywx.pageIndex = pageIndex;
         
@@ -36,11 +36,18 @@ $(function(){
     });
     
     $('a.page_prev').click(function(){
-        $('label#currentPageIndex').text(parseInt($('label#currentPageIndex').text()) -1);
+       var pageIndex = parseInt($('label#currentPageIndex').text()) -1;
+        //groupid = -1 代表所有用户组
+        var groupURL= mywx.getSiteURL()+'/contactmanage?t=user/index&pagesize=10&pageidx='+pageIndex+'&type=0&groupid=-1&token=1693742123&lang=zh_CN';
+        window.location.href=groupURL;
+         mywx.pageIndex = pageIndex;
     });
     $('a.page_go').click(function(){
-        $('span.goto_area input').val();
-        $('label#currentPageIndex').text($('span.goto_area input').val());
+        var toPageIndex = $('span.goto_area input').val();
+        //$('label#currentPageIndex').text($('span.goto_area input').val());
+        var groupURL= mywx.getSiteURL()+'/contactmanage?t=user/index&pagesize=10&pageidx='+toPageIndex+'&type=0&groupid=-1&token=1693742123&lang=zh_CN';
+        window.location.href=groupURL;
+        mywx.pageIndex = pageIndex;
     });
     
     //添加组事件绑定

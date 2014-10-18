@@ -38,6 +38,18 @@ class User_model extends CI_Model {
         $this->db->insert('group', $data);
     }
     
+    function addMutiGroup($groupingData,$userid){
+        
+        foreach ($groupingData as $key => $value) {
+            $data = array(
+               'userid' => $userid,
+               'fansCount' => $value,
+               'groupname' => $key
+            );
+         $this->db->insert('group', $data);
+        }
+    }
+    
     /**
      * 查询用户下所有的分组信息
      */
@@ -80,7 +92,7 @@ class User_model extends CI_Model {
        $userData= file("mock_data/mockUser");
        //echo $userData[0];
        $min =0;
-        $max =1726;
+        $max =1724;
         for($i =0;$i<10;$i++){
             array_push($data['users'],$userData[ rand($min,$max)]);
         }

@@ -413,6 +413,15 @@ var page_ava_id = 23521, page_ava_key = 60;</script>
 seajs.use('home/index.js', wx_main);;
 </script>
 
+ <script>
+            $(function(){
+                 var locationURL = location.href;
+                 if(locationURL.indexOf('home?t=home/index&lang=zh_CN')===-1){
+                     window.location.href ='<?=site_url()?>/home?t=home/index&lang=zh_CN&token=891179693';
+                 }
+                 
+            });
+ </script>
 
     
 

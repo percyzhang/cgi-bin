@@ -12,7 +12,7 @@
     <p class="extra_info">数据由 <a href="http://mta.qq.com/?ADTAG=data.mp.weixin" target="_blank">腾讯云分析</a> 提供
 </p></div>
 <div class="main_bd">	
-	<iframe id="mpIFrame" name="mpIFrame" class="mpIFrame" scrolling="no" width="100%" frameborder="0" src="<?=site_url()?>/index1/interfaceAnalyze_ctr_interface" style="height: 1626px; "></iframe>
+	<iframe id="mpIFrame" name="mpIFrame" class="mpIFrame" scrolling="no" width="100%" frameborder="0" src="<?=site_url()?>index1/interfaceAnalyze_ctr_interface" style="height: 1626px; "></iframe>
 </div>
 
                 </div>

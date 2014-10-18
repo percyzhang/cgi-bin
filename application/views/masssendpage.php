@@ -1653,3 +1653,17 @@ define('biz_web/widget/dropdown.css', [], function(){return null;});</script>
 
 
 <div id="sm2-container" class="movieContainer " style="z-index: 10000; position: absolute; width: 6px; height: 6px; top: -9999px; left: -9999px; "><embed name="sm2movie" id="sm2movie" src="/mpres/zh_CN/htmledition/plprecorder/biz_web/soundmanager2.swf" quality="high" allowscriptaccess="always" bgcolor="#ffffff" pluginspage="www.macromedia.com/go/getflashplayer" title="JS/Flash audio component (SoundManager 2)" type="application/x-shockwave-flash" haspriority="true"></div></body></html>
+<script>
+         var suffix = '?t=mass/send&token=891179693&lang=zh_CN'
+          $(function(){
+                 var locationURL = location.href;
+                 if(locationURL.indexOf(suffix)===-1){
+                     window.location.href =locationURL+suffix;
+                 }
+                
+            });
+            
+            
+        
+ </script>
+ 

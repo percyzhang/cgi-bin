@@ -6,6 +6,7 @@ class Report extends CI_Controller {
        function __construct()
     {
         parent::__construct();
+        session_start();
         $this->load->helper('file');
         $this->load->model('User_model');
         $this->output->enable_profiler(false);
@@ -65,6 +66,7 @@ class Report extends CI_Controller {
                 -> set_output(json_encode($data));
     }
     
+    
 
     public function getAllUser() {
        // $this->load->helper('file');
@@ -77,7 +79,15 @@ class Report extends CI_Controller {
        //echo $userData[0];
        $min =0;
         $max =1726;
-        for($i =0;$i<10;$i++){
+        
+        $pageIndex = $_SESSION['pageidx'];
+        //$_SESSION['fansCount'];
+       $pageCount =  ceil($_SESSION['fansCount']/10);
+       $toGenerateNum = 10;
+       if($pageIndex ==$pageCount ){
+           $toGenerateNum = $_SESSION['fansCount'] -($pageCount -1)*10;
+       }
+        for($i =0;$i<$toGenerateNum;$i++){
             array_push($data['users'],$userData[ rand($min,$max)]);
         }
          $this->output  
@@ -90,7 +100,7 @@ class Report extends CI_Controller {
                 'groups' => array(),
                 // 'userList' => array()
             );
-         $userid='zhang';
+         $userid= $_SESSION['userid'] ;
          $query_result = $this->User_model ->queryUsersGroup($userid);
             if($query_result){
                 foreach ($query_result->result() as $row)

@@ -670,7 +670,7 @@ $(document).ready(function(){
         //chart.showLoading('正在加载数据...');
         
         $.ajax({
-            url : '<?=site_url()?>/report/getUserAnalyzeData',
+            url : '<?=site_url()?>report/getUserAnalyzeData',
             type : 'POST',
             dataType : 'json',
             contentType: "application/x-www-form-urlencoded; charset=utf-8", 

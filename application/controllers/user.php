@@ -5,6 +5,7 @@ class User extends CI_Controller {
             function __construct()
             {
              parent::__construct();
+              session_start();
              $this->load->helper(array('form', 'url'));
              $this->load->model('User_model');
             }
@@ -24,7 +25,11 @@ class User extends CI_Controller {
                 $config['max_height']  = '768';
                 $config['file_name']  = time();
                 $this->load->library('upload', $config);
-                
+                $json = $this ->input->post('groupData');
+                //echo $json;
+                $json_Data = json_decode($json);
+                print_r($json_Data);
+               
                 if ( ! $this->upload->do_upload())
                 {
                  $error = array('error' => $this->upload->display_errors());
@@ -36,7 +41,7 @@ class User extends CI_Controller {
                  $data = array('upload_data' => $this->upload->data());
                  //var_dump($data);
                  $this->User_model ->insert_entry($data['upload_data']['file_name']);
-                 
+                  $this->User_model ->addMutiGroup($json_Data,$this ->input->post('userid'));
                   // foreach($data['upload_data'] as $item => $value){
                         //echo $item.":".$value."<br>";
 

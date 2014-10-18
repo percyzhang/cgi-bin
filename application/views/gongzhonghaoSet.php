@@ -39,7 +39,7 @@
                 <p class="desc">(一个月内只能申请修改一次)</p>
                                             </div>
                         <div class="meta_content">
-                            <img class="avatar" src="<?=  base_url()?>/weixin/headimgs/getheadimg<?= rand(0, 43)?>">
+                            <img class="avatar" src="<?=base_url()?>uploads/<?echo $useIImg;?>?>">
             </div>
             </li>
             
