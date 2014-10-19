@@ -334,7 +334,9 @@ class Index1 extends Base_Controller {
      public function logout()
    {
       session_destroy();
-      parent::login();
+      //parent::login();
+      $loginUrl = site_url().'loginpage?t=wxm2-login&lang=zh_CN';
+      redirect($loginUrl);
    }
         
 }
