@@ -220,11 +220,12 @@ and open the template in the editor.
             总粉丝数:<input type="text" name ="fansCount" id ="fansCount" value='100000'><br>
             类型:<input type="radio" value="1" name="type">订阅号
             <input type="radio" value="2" name ="type" checked="checked">服务号
-            <input type="radio" value="3" name ="type"> 企业号 </br>
+            <input type="radio" value="3" name ="type" disabled="disabled"> 企业号 </br>
             添加分组:<input type='radio' name="grouping" id='grouping' checked="checked"> 是 <input type='radio' name="grouping" id='noGrouping'> 否 
             <fieldset>
             <legend>添加分组</legend>
                 <span id ="countSpan">100000</span>
+               
                 <span id ="countSpanTmp"></span>
               <table border="1px #ooo" id="tab" cellpadding="0"
                cellspacing="0" width="30%">
@@ -240,7 +241,7 @@ and open the template in the editor.
                </tr>
               </table>
                 <input type="button" onclick="addTr2('tab', -1)" value="添加分组">
-                <input type="button" onclick="delTr2()" value="删除分组">
+                <input type="button" onclick="delTr2()" value="删除分组"></br>
                  <input type  = "button"  onclick="testGet();" value = '如果需要分组数据，请一定在点击提交前点击我!!~~~'>
              </fieldset>
             <input type='hidden' name ='groupData' id ='groupingData'>

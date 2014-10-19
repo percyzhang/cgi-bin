@@ -9,7 +9,7 @@
 								
 								
                                 <span class="type_wrp">
-                                        <a href="<?=site_url()?>settingpage?t=setting/index&action=index&token=2124370165&lang=zh_CN" class="type icon_service_label">服务号</a>
+                                    <a href="<?=site_url()?>settingpage?t=setting/index&action=index&token=2124370165&lang=zh_CN" class="type <? if ($type == 2){echo 'icon_service_label';} else if ($type ==1){echo 'icon_subscribe_label';}?>" ><? if ($type == 2){echo '服务号';} else if ($type ==1){echo '订阅号';}?></a>
                                                             <a href="<?=site_url()?>merchant/store?action=detail&t=wxverify/detail&info=verify&token=2124370165&lang=zh_CN" class="type icon_verify_label success">已认证</a>
                                     </span>
                                 <a href="<?=site_url()?>settingpage?t=setting/index&action=index&token=2124370165&lang=zh_CN"><img src="<?=base_url()?>uploads/<?echo $useIImg;?>" class="avatar"></a>
