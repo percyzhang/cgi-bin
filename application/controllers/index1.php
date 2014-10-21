@@ -69,9 +69,11 @@ class Index1 extends Base_Controller {
 	public function index()
 	{
             $this->load->helper('url');
-            $this ->load ->view("head");
-             $this->showHead();
-            $this->load->view('indexMain');
+            //$this ->load ->view("head");
+            //parent::showHead('indexMain');
+          //  $this->load->view('indexMain');
+            echo site_url();
+            redirect(site_url().'home');
        
 	}
         function showHead(){

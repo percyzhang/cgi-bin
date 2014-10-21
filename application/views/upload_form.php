@@ -44,11 +44,11 @@ and open the template in the editor.
 		var groupingNameArr = [];
 		var groupingArr = [];
 		$('input[name=group]').each(function(key,val){
-			groupingArr[key]= parseInt($(val).attr('value'));
+			groupingArr[key]= parseInt($(val).val());
 		});
 		
 		$('input[name=groupingName]').each(function(key,val){
-			groupingNameArr[key]= $(val).attr('value');
+			groupingNameArr[key]= $(val).val();
 		});
 		var jsonObj= {};
 		

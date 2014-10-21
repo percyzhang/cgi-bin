@@ -6,7 +6,8 @@
     <div class="index_tap added">
         <ul class="inner">
             <li class="index_tap_item added_message">
-            <a href="https://mp.weixin.qq.com/cgi-bin/message?t=message/list&count=20&day=7&token=145239729&lang=zh_CN">
+               
+            <a href="<?=site_url()?>cgi-bin/message?t=message/list&count=20&day=7&token=2124370165&lang=zh_CN">
                 <span class="tap_inner">
                     <i class="icon_index_tap"></i>
                     <em class="number">0</em>
@@ -15,7 +16,7 @@
             </a>
             </li>
             <li class="index_tap_item added_fans">
-                        <a href="https://mp.weixin.qq.com/cgi-bin/contactmanage?t=user/index&pagesize=10&pageidx=0&type=0&groupid=0&token=145239729&lang=zh_CN">
+                        <a href="<?=site_url()?>cgi-bin/contactmanage?t=user/index&pagesize=10&pageidx=0&type=0&token=2124370165&lang=zh_CN">
                             <span class="tap_inner no_extra">
                     <i class="icon_index_tap"></i>
                                         <em class="number">9</em>
@@ -28,7 +29,7 @@
     <div class="index_tap total">
         <ul class="inner">
                         <li class="index_tap_item total_fans extra">
-            <a href="https://mp.weixin.qq.com/cgi-bin/contactmanage?t=user/index&pagesize=10&pageidx=0&type=0&groupid=0&token=145239729&lang=zh_CN">
+            <a href="<?=site_url()?>cgi-bin/contactmanage?t=user/index&pagesize=10&pageidx=0&type=0&token=2124370165&lang=zh_CN">
                 <span class="tap_inner">
                     <i class="icon_index_tap"></i>
                     <em class="number"><? echo $_SESSION['fansCount'];?></em>

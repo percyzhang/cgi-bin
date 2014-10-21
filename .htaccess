@@ -1,3 +1,3 @@
 RewriteEngine on  
 RewriteCond $1 !^(index\.php|mock_data|uploads|weixin|images|robots\.txt)  
-RewriteRule ^(.*)$ /ci/index.php/$1 [L]
+RewriteRule ^(.*)$ /i/index.php/$1 [L]

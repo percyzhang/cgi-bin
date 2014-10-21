@@ -5,14 +5,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-require 'base_Controller.php';
+require(APPPATH.'controllers/base_Controller.php');
 
 /**
- * Description of frame
+ * Description of appmsg
  *
  * @author Administrator
  */
-class frame extends Base_Controller {
+class appmsg extends Base_Controller {
 
     //put your code here
     //put your code here
@@ -20,11 +20,12 @@ class frame extends Base_Controller {
         parent::__construct();
     }
 
-    //跳转到微信支付
+    //素材管理
     public function index() {
+        $this->load->helper('url');
         $this->load->view("head");
-        $this->showHead('weixinpay');
-        $this->load->view("weixinPay");
+        $this->showHead('appmsg');
+        $this->load->view("sucaiManager");
     }
 
 }

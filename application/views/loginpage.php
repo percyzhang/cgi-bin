@@ -325,10 +325,11 @@
         <script type="text/javascript" src="<?=base_url()?>weixin/html5Report20a341.js"></script>
         <script>
             $(function(){
-                 var locationURL = location.href;
+                 
                 // alert(locationURL);
+                var tourl= window.location.host + window.location.pathname;
                  if(locationURL.indexOf('?t=wxm2-login&lang=zh_CN')===-1){
-                     window.location.href =locationURL+'?t=wxm2-login&lang=zh_CN';
+                     window.location.href =tourl;
                  }
                  
             });

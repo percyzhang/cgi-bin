@@ -6,9 +6,9 @@
 window.mywx ={
            
             getSiteURL:function(){
-                var locationURL = location.href;
-                var siteURL = locationURL.substring(0,locationURL.indexOf('index.php'))+'index.php';
-                    return siteURL;
+                var locationURL =window.location.host + window.location.pathname ;
+//                var siteURL = locationURL.substring(0,locationURL.indexOf('index.php'))+'index.php';
+                    return locationURL;
 		},
              pageIndex :1
 	};
@@ -20,8 +20,14 @@ $(function(){
     $('a.btn.page_next').click(function(){
         var pageIndex = parseInt($('label#currentPageIndex').text())+1;
         //groupid = -1 代表所有用户组
-        var groupURL= mywx.getSiteURL()+'/contactmanage?t=user/index&pagesize=10&pageidx='+pageIndex+'&type=0&groupid=-1&token=1693742123&lang=zh_CN';
-        window.location.href=groupURL;
+        
+       // alert( mywx.getSiteURL());
+//        alert(window.location.pathname);
+//        alert(window.location.host);
+        var groupURL= 'contactmanage?t=user/index&pagesize=10&pageidx='+pageIndex+'&type=0&groupid=-1&token=1693742123&lang=zh_CN';
+//        alert('group:' + groupURL);
+       // window.location.href=groupURL;
+        location.replace(groupURL);
          mywx.pageIndex = pageIndex;
         
         
@@ -38,14 +44,14 @@ $(function(){
     $('a.page_prev').click(function(){
        var pageIndex = parseInt($('label#currentPageIndex').text()) -1;
         //groupid = -1 代表所有用户组
-        var groupURL= mywx.getSiteURL()+'/contactmanage?t=user/index&pagesize=10&pageidx='+pageIndex+'&type=0&groupid=-1&token=1693742123&lang=zh_CN';
+        var groupURL= 'contactmanage?t=user/index&pagesize=10&pageidx='+pageIndex+'&type=0&groupid=-1&token=1693742123&lang=zh_CN';
         window.location.href=groupURL;
          mywx.pageIndex = pageIndex;
     });
     $('a.page_go').click(function(){
         var toPageIndex = $('span.goto_area input').val();
         //$('label#currentPageIndex').text($('span.goto_area input').val());
-        var groupURL= mywx.getSiteURL()+'/contactmanage?t=user/index&pagesize=10&pageidx='+toPageIndex+'&type=0&groupid=-1&token=1693742123&lang=zh_CN';
+        var groupURL= 'contactmanage?t=user/index&pagesize=10&pageidx='+toPageIndex+'&type=0&groupid=-1&token=1693742123&lang=zh_CN';
         window.location.href=groupURL;
         mywx.pageIndex = pageIndex;
     });
@@ -59,10 +65,11 @@ $(function(){
             //提交添加分组,添加组 刷新整个页面，就可以获得新添加的组了
             var locationURL = location.href;
             var siteURL = locationURL.substring(0,locationURL.indexOf('index.php'))+'index.php';
-            var groupname = $('input.frm_input.js_name').val();
+            //alert(mywx.getSiteURL()+"/userC/addGroup");
+           // var groupname = $('input.frm_input.js_name').val();
             $.ajax({
                 type: "POST",
-                url: siteURL+"/userC/addGroup",
+                url: mywx.getSiteURL()+"/userC/addGroup",
                 data: "groupname="+groupname,
                 success: function(msg){
                   //alert( "Data Saved: " + msg );

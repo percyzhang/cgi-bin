@@ -202,7 +202,7 @@
                             $.each(data.groups, function(key, val) {
                                         //alert(key + '==>>' + val.groupname);
                                         
-                                        var groupURL= '<?=  site_url()?>contactmanage?t=user/index&pagesize=10&pageidx=1&type=1&groupid='+val.groupid+'&token=1693742123&lang=zh_CN';
+                                        var groupURL= '<?=  site_url()?>cgi-bin/contactmanage?t=user/index&pagesize=10&pageidx=1&type=1&groupid='+val.groupid+'&token=1693742123&lang=zh_CN';
                                                 var tmpHtml ='<dd class="inner_menu_item ">'+
                                                  '<a href="'+groupURL+'" class="inner_menu_link" title="'+val.groupname+'">'+
                                                  '<strong>'+val.groupname+'</strong><em class="num">('+val.fansCount+')</em>'+

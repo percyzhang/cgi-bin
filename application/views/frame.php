@@ -33,25 +33,26 @@
     <dt class="menu_title">
             <i class="icon_menu" style="background:url(https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_function.png) no-repeat;"></i>功能        </dt> 
 
-            <dd class="menu_item <?  if($pagename == 'masssendpage'){ echo 'selected';} ?>"><a href="<?=site_url()?>masssendpage?t=mass/send&token=2124370165&lang=zh_CN" id ='masssendpage'>群发功能</a></dd>
+            <dd class="menu_item <?  if($pagename == 'masssendpage'){ echo 'selected';} ?>"><a href="<?=site_url()?>cgi-bin/masssendpage?t=mass/send&token=2124370165&lang=zh_CN" id ='masssendpage'>群发功能</a></dd>
 					<dd class="menu_item <?  if($pagename == 'autoreply'){ echo ' selected';} ?>"><a href="<?=site_url()?>advanced/autoreply?t=ivr/reply&action=beadded&token=2124370165&lang=zh_CN">自动回复</a></dd>
 					<dd class="menu_item <?  if($pagename == 'selfmenu'){ echo ' selected';} ?>"><a href="<?=site_url()?>advanced/selfmenu?action=index&t=advanced/menu-setting&token=2124370165&lang=zh_CN">自定义菜单</a></dd>
 					<dd class="menu_item <?  if($pagename == 'custom'){ echo ' selected';} ?>"><a href="<?=site_url()?>misc/pluginloginpage?t=advanced/verify&action=custom&op=outerlogin&pluginid=duokefu&token=2124370165&lang=zh_CN">多客服</a></dd>
-				    <dd class="menu_plugins <?  if($pagename == 'plugincenter'){ echo ' selected';} ?>"><a class="btn_plugins_add" href="<?=site_url()?>plugincenter?t=service/plugins&act=all&token=2124370165&lang=zh_CN">添加功能插件<i class="icon_common new"></i></a>
+				    <dd class="menu_plugins <?  if($pagename == 'plugincenter'){ echo ' selected';} ?>"><a class="btn_plugins_add" href="<?=site_url()?>cgi-bin/plugincenter?t=service/plugins&act=all&token=2124370165&lang=zh_CN">添加功能插件<i class="icon_common new"></i></a>
                                     </dd>
 		</dl>
 <dl class="menu ">
     <dt class="menu_title clickable <?  if($pagename == 'weixinpay'){ echo ' selected';} ?>">
-    <a href="<?=site_url()?>frame?nav=10010&t=business/index_frame&iframe=%2Fpaymch%2Fbusiness%3Faction%3Dfirstentry&token=2124370165&lang=zh_CN">        <i class="icon_menu" style="background:url(https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_wxpay_v2.png) no-repeat;"></i>微信支付</a>        </dt> 
+    <a href="<?=site_url()?>cgi-bin/frame?nav=10010&t=business/index_frame&iframe=%2Fpaymch%2Fbusiness%3Faction%3Dfirstentry&token=2124370165&lang=zh_CN">        
+        <i class="icon_menu" style="background:url(https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_wxpay_v2.png) no-repeat;"></i>微信支付</a>        </dt> 
 
 	</dl>
 <dl class="menu ">
     <dt class="menu_title">
             <i class="icon_menu" style="background:url(https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_management.png) no-repeat;"></i>管理        </dt> 
 
-				<dd class="menu_item <?  if($pagename == 'message'){ echo ' selected';} ?>"><a href="<?=site_url()?>message?t=message/list&count=20&day=7&token=2124370165&lang=zh_CN">消息管理</a></dd>
-					<dd class="menu_item <?  if($pagename == 'contactmanage'){ echo ' selected';} ?>"><a href="<?=site_url()?>contactmanage?t=user/index&pagesize=10&pageidx=0&type=0&token=2124370165&lang=zh_CN">用户管理</a></dd>
-					<dd class="menu_item <?  if($pagename == 'appmsg'){ echo ' selected';} ?>"><a href="<?=site_url()?>appmsg?begin=0&count=10&t=media/appmsg_list&type=10&action=list&lang=zh_CN&token=2124370165">素材管理</a></dd>
+				<dd class="menu_item <?  if($pagename == 'message'){ echo ' selected';} ?>"><a href="<?=site_url()?>cgi-bin/message?t=message/list&count=20&day=7&token=2124370165&lang=zh_CN">消息管理</a></dd>
+					<dd class="menu_item <?  if($pagename == 'contactmanage'){ echo ' selected';} ?>"><a href="<?=site_url()?>cgi-bin/contactmanage?t=user/index&pagesize=10&pageidx=0&type=0&token=2124370165&lang=zh_CN">用户管理</a></dd>
+					<dd class="menu_item <?  if($pagename == 'appmsg'){ echo ' selected';} ?>"><a href="<?=site_url()?>cgi-bin/appmsg?begin=0&count=10&t=media/appmsg_list&type=10&action=list&lang=zh_CN&token=2124370165">素材管理</a></dd>
 		</dl>
 <dl class="menu ">
     <dt class="menu_title">
@@ -73,10 +74,10 @@
     <dt class="menu_title">
             <i class="icon_menu" style="background:url(https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_setup.png) no-repeat;"></i>设置        </dt> 
 
-				<dd class="menu_item <?  if($pagename == 'settingpage'){ echo ' selected';} ?>"><a href="<?=site_url()?>settingpage?t=setting/index&action=index&token=2124370165&lang=zh_CN">公众号设置</a></dd>
+				<dd class="menu_item <?  if($pagename == 'settingpage'){ echo ' selected';} ?>"><a href="<?=site_url()?>cgi-bin/settingpage?t=setting/index&action=index&token=2124370165&lang=zh_CN">公众号设置</a></dd>
 					<dd class="menu_item <?  if($pagename == 'store'){ echo ' selected';} ?>"><a href="<?=site_url()?>merchant/store?action=detail&t=wxverify/detail&info=verify&token=2124370165&lang=zh_CN">微信认证</a></dd>
 					<dd class="menu_item <?  if($pagename == 'safeassistant'){ echo ' selected';} ?>"><a href="<?=site_url()?>safeassistant?action=view&t=setting/safe-mphelper&token=2124370165&lang=zh_CN">安全助手</a></dd>
-					<dd class="menu_item <?  if($pagename == 'safecenterstatus'){ echo ' selected';} ?>"><a href="<?=site_url()?>safecenterstatus?action=view&t=setting/safe-index&token=2124370165&lang=zh_CN">安全中心</a></dd>
+					<dd class="menu_item <?  if($pagename == 'safecenterstatus'){ echo ' selected';} ?>"><a href="<?=site_url()?>cgi-bin/safecenterstatus?action=view&t=setting/safe-index&token=2124370165&lang=zh_CN">安全中心</a></dd>
 		</dl>
 <dl class="menu <?  if($pagename == 'advanceb'){ echo ' selected';} ?>">
     <dt class="menu_title clickable">
