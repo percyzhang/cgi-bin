@@ -27,7 +27,8 @@ class Base_Controller extends CI_Controller {
      function showHead($pagename){
          //如果用户没有登录，跳转到登录页面
          if(!isset($_SESSION['userid'])){
-             $this->login();
+             //$this->login();
+             redirect(site_url()."loginpage");
          }
          else{
             $data = array(
