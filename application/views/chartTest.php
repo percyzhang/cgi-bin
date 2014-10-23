@@ -11,7 +11,15 @@ and open the template in the editor.
         <script type="text/javascript" src="<?=base_url()?>weixin/jquery-1.9.11ec5f7.js"></script>
     </head>
     <body>
-       
+        <style>
+            .test {
+               height:40px; width:200px;
+               background-image: url('<?=  base_url()?>/weixin/bg_logo1e7c60.png') ;
+                   
+            }
+        </style>
+        
+        <div class="test"></div>
         <script src="<?=base_url()?>weixin/highchart/highcharts.js"></script>
         
         <a href="#" id="btn_sure">点我 </a>
@@ -37,7 +45,11 @@ var options = {
     },
      legend: {
             borderWidth: 0,
-            color:"#44b549"
+            itemStyle:{"background-image": "url('<?=  base_url()?>/weixin/bg_logo1e7c60.png')"},
+            color:"#44b549",
+            labelFormatter: function () {
+                return this.name + ' (click to hide)';
+            }
         },
     yAxis: {
     	title: { text: '' },
@@ -101,7 +113,7 @@ $(document).ready(function(){
         //chart.showLoading('正在加载数据...');
         
         $.ajax({
-            url : '<?=site_url()?>/report/getUserAnalyzeData',
+            url : '<?=site_url()?>report/getUserAnalyzeData',
             type : 'POST',
             dataType : 'json',
             contentType: "application/x-www-form-urlencoded; charset=utf-8", 

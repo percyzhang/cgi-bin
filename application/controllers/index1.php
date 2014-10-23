@@ -37,6 +37,7 @@ class Index1 extends Base_Controller {
         
         public function toChart(){
 //            echo 'dddd';
+             $this->load->helper('url');
             $this->load->view("chartTest");
         }
     
