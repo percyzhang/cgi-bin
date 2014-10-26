@@ -2,38 +2,35 @@
     <link rel="stylesheet" href="https://res.wx.qq.com/mpres/htmledition/style/page/page_message1ec5f7.css">
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>/weixin/pagination1ec5f7.css">
 
+   
+
  </head>          
 	<div class="main_hd">
         <h2>消息管理</h2>
         <div class="title_tab" id="topTab"><ul class="tab_navs title_tab" data-index="0">
     
     
-    <li data-index="0" class="tab_nav first js_top  selected" data-id="total"><a href="https://mp.weixin.qq.com/cgi-bin/message?t=message/list&count=20&day=7&token=145239729&lang=zh_CN&filterivrmsg=1">全部消息</a></li>
+    <li data-index="0" class="tab_nav first js_top  selected" data-id="total"><a href="<?=site_url()?>cgi-bin/message?t=message/list&count=20&day=7&token=2124370165&lang=zh_CN&filterivrmsg=1">全部消息</a></li>
     
     
     
-    <li data-index="1" class="tab_nav  js_top sub" data-id="today"><a href="https://mp.weixin.qq.com/cgi-bin/message?t=message/list&count=20&day=0&token=145239729&lang=zh_CN&filterivrmsg=1">今天</a></li>
+    <li data-index="1" class="tab_nav  js_top sub" data-id="today"><a href="<?=site_url()?>cgi-bin/message?t=message/list&count=20&day=0&token=2124370165&lang=zh_CN&filterivrmsg=1">今天</a></li>
     
     
     
-    <li data-index="2" class="tab_nav  js_top sub" data-id="yesterday"><a href="https://mp.weixin.qq.com/cgi-bin/message?t=message/list&count=20&day=1&token=145239729&lang=zh_CN&filterivrmsg=1">昨天</a></li>
+    <li data-index="2" class="tab_nav  js_top sub" data-id="yesterday"><a href="<?=site_url()?>cgi-bin/message?t=message/list&count=20&day=1&token=2124370165&lang=zh_CN&filterivrmsg=1">昨天</a></li>
     
     
     
-    <li data-index="3" class="tab_nav  js_top sub" data-id="beforeYesterday"><a href="https://mp.weixin.qq.com/cgi-bin/message?t=message/list&count=20&day=2&token=145239729&lang=zh_CN&filterivrmsg=1">前天</a></li>
+    <li data-index="3" class="tab_nav  js_top sub" data-id="beforeYesterday"><a href="<?=site_url()?>cgi-bin/message?t=message/list&count=20&day=2&token=2124370165&lang=zh_CN&filterivrmsg=1">前天</a></li>
     
     
     
-    <li data-index="4" class="tab_nav  js_top sub" data-id="fivedays"><a href="https://mp.weixin.qq.com/cgi-bin/message?t=message/list&count=20&day=3&token=145239729&lang=zh_CN&filterivrmsg=1">更早</a></li>
+    <li data-index="4" class="tab_nav  js_top sub" data-id="fivedays"><a href="<?=site_url()?>cgi-bin/message?t=message/list&count=20&day=3&token=2124370165&lang=zh_CN&filterivrmsg=1;">更早</a></li>
     
     
     
-    <li data-index="5" class="tab_nav  js_top " data-id="star"><a href="https://mp.weixin.qq.com/cgi-bin/message?t=message/list&count=20&action=star&token=145239729&lang=zh_CN&filterivrmsg=1">星标消息</a></li>
-    
-    
-    
-    
-    
+    <li data-index="5" class="tab_nav  js_top " data-id="star"><a href="<?=site_url()?>cgi-bin/message?t=message/list&count=20&day=-1&token=2124370165&lang=zh_CN&filterivrmsg=1;">星标消息</a></li>
     
 </ul>
 </div>
@@ -62,32 +59,66 @@
         
 
         
-        <ul class="message_list" id="listContainer"><li class="message_item " id="msgListItem201855403" data-id="201855403">
+        <ul class="message_list" id="listContainer">
+            
+            <?
+            
+            function get_chinese_weekday($datetime) {
+                $weekday = date('w', strtotime($datetime));
+                $weeklist = array('日', '一', '二', '三', '四', '五', '六');
+                
+                return '星期' . $weeklist[$weekday];
+            }
+
+            function transTime($time) {
+                    $rtime = date("m-d H:i", $time);
+                    $rtime2 = date("Y-m-d H:i", $time);
+                    $htime = date("H:i", $time);
+                    $time = time() - $time;
+                    if ($time < 5) {
+                        $str = '刚刚';
+                    }
+                    if ($time < 60) {
+                        $str = '今天';
+                    } 
+                    elseif ($time < 60 * 60) {
+                        $min = floor($time / 60);
+                        $str = $min . ' 分钟前';
+                    }  elseif ($time < 60 * 60 * 24 * 3) {
+                        $d = floor($time / (60 * 60 * 24));
+                        if ($d == 1)
+                            $str = '前天 ' . $htime;
+                        else
+                            $str = '昨天 ' . $htime;
+                    }else {
+                        $str = get_chinese_weekday(date("Y-m-d H:i", $time)) . " " . $htime;
+                    }
+                    return $str;
+               }
+               
+               
+                foreach ($msgArr as $key => $value) {
+                   ?>
+               
+            <li class="message_item " id="msgListItem201855403" data-id="201855403">
         
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201855403" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201855403" data-tofakeid="2746519381" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
+            <div class="message_opr">
+
+                <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201855403" starred="" title="收藏消息">取消收藏</a>
+                <a href="javascript:;" data-id="201855403" data-tofakeid="2746519381" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
+            </div>
         
         <div class="message_info">
             <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">昨天 16:24</div>
+            <div class="message_time"><? echo transTime(strtotime($value['date']))?></div>
             <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=2746519381&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="2746519381" class="remark_name">♪巴黎<span class="emoji emoji2665"></span>夜雨♬</a>
-                
-                
+                <a href="#" target="_blank" data-fakeid="2746519381" class="remark_name">
+<!--                    巴黎<span class="emoji emoji2665"></span>夜雨♬-->
+                    <?echo $value['userid']?>
+                </a>
                 <span class="nickname" data-fakeid="2746519381"></span>
-                
-                
                 <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="2746519381" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=2746519381&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="2746519381">
+                <a target="_blank" href="#" class="avatar" data-fakeid="2746519381">
                     <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(1)" data-fakeid="2746519381">
                 </a>
                 
@@ -95,7 +126,7 @@
         </div>
 
         <div class="message_content text">
-            <div id="wxMsg201855403" data-id="201855403" class="wxMsg">微官网</div>
+            <div id="wxMsg201855403" data-id="201855403" class="wxMsg"><? echo $value['content']?></div>
         </div>
 
         
@@ -111,956 +142,15 @@
         </div>
         
     </li>
-    
-    <li class="message_item " id="msgListItem201855398" data-id="201855398">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201855398" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201855398" data-tofakeid="2746519381" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">昨天 16:23</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=2746519381&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="2746519381" class="remark_name">♪巴黎<span class="emoji emoji2665"></span>夜雨♬</a>
-                
-                
-                <span class="nickname" data-fakeid="2746519381"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="2746519381" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=2746519381&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="2746519381">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(1)" data-fakeid="2746519381">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201855398" data-id="201855398" class="wxMsg">芝麻开门</div>
-        </div>
-
-        
-        <div id="quickReplyBox201855398" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201855398">
-                    <button class="js_reply_OK" data-id="201855398" data-fakeid="2746519381">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201855398" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201855317" data-id="201855317">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201855317" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201855317" data-tofakeid="2265428961" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">昨天 16:02</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=2265428961&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="2265428961" class="remark_name">俊享</a>
-                
-                
-                <span class="nickname" data-fakeid="2265428961"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="2265428961" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=2265428961&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="2265428961">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(2)" data-fakeid="2265428961">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201855317" data-id="201855317" class="wxMsg">摇一摇</div>
-        </div>
-
-        
-        <div id="quickReplyBox201855317" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201855317">
-                    <button class="js_reply_OK" data-id="201855317" data-fakeid="2265428961">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201855317" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201855303" data-id="201855303">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201855303" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201855303" data-tofakeid="2265428961" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">昨天 16:00</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=2265428961&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="2265428961" class="remark_name">俊享</a>
-                
-                
-                <span class="nickname" data-fakeid="2265428961"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="2265428961" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=2265428961&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="2265428961">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(2)" data-fakeid="2265428961">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201855303" data-id="201855303" class="wxMsg">微活动</div>
-        </div>
-
-        
-        <div id="quickReplyBox201855303" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201855303">
-                    <button class="js_reply_OK" data-id="201855303" data-fakeid="2265428961">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201855303" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201821433" data-id="201821433">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201821433" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201821433" data-tofakeid="1789875301" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期四 19:36</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1789875301&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="1789875301" class="remark_name"><span class="emoji emoji1f342"></span><span class="emoji emoji1f343"></span><span class="emoji emoji1f342"></span><span class="emoji emoji1f343"></span></a>
-                
-                
-                <span class="nickname" data-fakeid="1789875301"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="1789875301" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1789875301&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="1789875301">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(3)" data-fakeid="1789875301">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201821433" data-id="201821433" class="wxMsg">旺旺吧</div>
-        </div>
-
-        
-        <div id="quickReplyBox201821433" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201821433">
-                    <button class="js_reply_OK" data-id="201821433" data-fakeid="1789875301">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201821433" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201821353" data-id="201821353">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201821353" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201821353" data-tofakeid="1789875301" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期四 19:35</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1789875301&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="1789875301" class="remark_name"><span class="emoji emoji1f342"></span><span class="emoji emoji1f343"></span><span class="emoji emoji1f342"></span><span class="emoji emoji1f343"></span></a>
-                
-                
-                <span class="nickname" data-fakeid="1789875301"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="1789875301" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1789875301&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="1789875301">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(3)" data-fakeid="1789875301">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201821353" data-id="201821353" class="wxMsg">我想给宝宝取名</div>
-        </div>
-
-        
-        <div id="quickReplyBox201821353" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201821353">
-                    <button class="js_reply_OK" data-id="201821353" data-fakeid="1789875301">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201821353" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201821225" data-id="201821225">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201821225" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201821225" data-tofakeid="1789875301" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期四 19:33</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1789875301&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="1789875301" class="remark_name"><span class="emoji emoji1f342"></span><span class="emoji emoji1f343"></span><span class="emoji emoji1f342"></span><span class="emoji emoji1f343"></span></a>
-                
-                
-                <span class="nickname" data-fakeid="1789875301"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="1789875301" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1789875301&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="1789875301">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(3)" data-fakeid="1789875301">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201821225" data-id="201821225" class="wxMsg">你好</div>
-        </div>
-
-        
-        <div id="quickReplyBox201821225" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201821225">
-                    <button class="js_reply_OK" data-id="201821225" data-fakeid="1789875301">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201821225" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201813660" data-id="201813660">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201813660" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201813660" data-tofakeid="1179304135" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期四 11:43</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1179304135&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="1179304135" class="remark_name">小Q</a>
-                
-                
-                <span class="nickname" data-fakeid="1179304135"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="1179304135" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1179304135&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="1179304135">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(4)" data-fakeid="1179304135">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201813660" data-id="201813660" class="wxMsg">二十一世纪是一个多变充满危机的社会的，许多的朋友在自己有一份工作的基础上，会给自己准备第二职业作为自己人生的备胎。你怎么看待这个问题呀交个朋友一起探讨微信/QQ349739193</div>
-        </div>
-
-        
-        <div id="quickReplyBox201813660" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201813660">
-                    <button class="js_reply_OK" data-id="201813660" data-fakeid="1179304135">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201813660" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201792488" data-id="201792488">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201792488" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201792488" data-tofakeid="2743379221" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期三 15:44</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=2743379221&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="2743379221" class="remark_name">林小敏</a>
-                
-                
-                <span class="nickname" data-fakeid="2743379221"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="2743379221" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=2743379221&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="2743379221">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(5)" data-fakeid="2743379221">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201792488" data-id="201792488" class="wxMsg">7</div>
-        </div>
-
-        
-        <div id="quickReplyBox201792488" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201792488">
-                    <button class="js_reply_OK" data-id="201792488" data-fakeid="2743379221">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201792488" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201790895" data-id="201790895">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201790895" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201790895" data-tofakeid="1377252981" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期三 13:11</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1377252981&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="1377252981" class="remark_name">粒</a>
-                
-                
-                <span class="nickname" data-fakeid="1377252981"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="1377252981" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1377252981&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="1377252981">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(6)" data-fakeid="1377252981">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201790895" data-id="201790895" class="wxMsg"><img src="<?=  base_url()?>/messageManager_files/0.gif" width="24" height="24">您好！</div>
-        </div>
-
-        
-        <div id="quickReplyBox201790895" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201790895">
-                    <button class="js_reply_OK" data-id="201790895" data-fakeid="1377252981">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201790895" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201790890" data-id="201790890">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201790890" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201790890" data-tofakeid="1377252981" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期三 13:11</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1377252981&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="1377252981" class="remark_name">粒</a>
-                
-                
-                <span class="nickname" data-fakeid="1377252981"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="1377252981" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1377252981&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="1377252981">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(6)" data-fakeid="1377252981">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201790890" data-id="201790890" class="wxMsg">就通过这里吗？</div>
-        </div>
-
-        
-        <div id="quickReplyBox201790890" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201790890">
-                    <button class="js_reply_OK" data-id="201790890" data-fakeid="1377252981">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201790890" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201790883" data-id="201790883">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201790883" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201790883" data-tofakeid="1377252981" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期三 13:11</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1377252981&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="1377252981" class="remark_name">粒</a>
-                
-                
-                <span class="nickname" data-fakeid="1377252981"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="1377252981" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1377252981&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="1377252981">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(6)" data-fakeid="1377252981">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201790883" data-id="201790883" class="wxMsg">我们怎么联系？</div>
-        </div>
-
-        
-        <div id="quickReplyBox201790883" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201790883">
-                    <button class="js_reply_OK" data-id="201790883" data-fakeid="1377252981">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201790883" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201789859" data-id="201789859">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201789859" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201789859" data-tofakeid="1620325200" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期三 11:45</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1620325200&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="1620325200" class="remark_name">永不放弃</a>
-                
-                
-                <span class="nickname" data-fakeid="1620325200"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="1620325200" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1620325200&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="1620325200">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(7)" data-fakeid="1620325200">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201789859" data-id="201789859" class="wxMsg">我想给宝宝起名</div>
-        </div>
-
-        
-        <div id="quickReplyBox201789859" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201789859">
-                    <button class="js_reply_OK" data-id="201789859" data-fakeid="1620325200">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201789859" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201789848" data-id="201789848">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201789848" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201789848" data-tofakeid="1620325200" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期三 11:44</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1620325200&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="1620325200" class="remark_name">永不放弃</a>
-                
-                
-                <span class="nickname" data-fakeid="1620325200"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="1620325200" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=1620325200&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="1620325200">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(7)" data-fakeid="1620325200">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201789848" data-id="201789848" class="wxMsg">在吗</div>
-        </div>
-
-        
-        <div id="quickReplyBox201789848" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201789848">
-                    <button class="js_reply_OK" data-id="201789848" data-fakeid="1620325200">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201789848" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item replyed" id="msgListItem201787491" data-id="201787491">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201787491" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201787491" data-tofakeid="665804060" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期三 07:40</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=665804060&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="665804060" class="remark_name">湮灭</a>
-                
-                
-                <span class="nickname" data-fakeid="665804060"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="665804060" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=665804060&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="665804060">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(8)" data-fakeid="665804060">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201787491" data-id="201787491" class="wxMsg">你好。 我想请你们取名字</div>
-        </div>
-
-        
-        <div id="quickReplyBox201787491" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201787491">
-                    <button class="js_reply_OK" data-id="201787491" data-fakeid="665804060">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201787491" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201785941" data-id="201785941">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201785941" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201785941" data-tofakeid="935743401" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期二 22:50</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=935743401&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="935743401" class="remark_name">杨淑女</a>
-                
-                
-                <span class="nickname" data-fakeid="935743401"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="935743401" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=935743401&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="935743401">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(9)" data-fakeid="935743401">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201785941" data-id="201785941" class="wxMsg">小孩小名</div>
-        </div>
-
-        
-        <div id="quickReplyBox201785941" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201785941">
-                    <button class="js_reply_OK" data-id="201785941" data-fakeid="935743401">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201785941" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201781550" data-id="201781550">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201781550" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201781550" data-tofakeid="938964884" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期二 20:16</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=938964884&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="938964884" class="remark_name"><span class="emoji emoji2747"></span>Y丫 <span class="emoji emoji2747"></span></a>
-                
-                
-                <span class="nickname" data-fakeid="938964884"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="938964884" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=938964884&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="938964884">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(10)" data-fakeid="938964884">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201781550" data-id="201781550" class="wxMsg">在么</div>
-        </div>
-
-        
-        <div id="quickReplyBox201781550" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201781550">
-                    <button class="js_reply_OK" data-id="201781550" data-fakeid="938964884">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201781550" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201781541" data-id="201781541">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201781541" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201781541" data-tofakeid="938964884" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期二 20:16</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=938964884&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="938964884" class="remark_name"><span class="emoji emoji2747"></span>Y丫 <span class="emoji emoji2747"></span></a>
-                
-                
-                <span class="nickname" data-fakeid="938964884"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="938964884" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=938964884&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="938964884">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(10)" data-fakeid="938964884">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201781541" data-id="201781541" class="wxMsg">你好</div>
-        </div>
-
-        
-        <div id="quickReplyBox201781541" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201781541">
-                    <button class="js_reply_OK" data-id="201781541" data-fakeid="938964884">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201781541" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201775322" data-id="201775322">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201775322" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201775322" data-tofakeid="2175522242" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期二 19:14</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=2175522242&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="2175522242" class="remark_name">正炎</a>
-                
-                
-                <span class="nickname" data-fakeid="2175522242"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="2175522242" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=2175522242&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="2175522242">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(11)" data-fakeid="2175522242">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201775322" data-id="201775322" class="wxMsg">在吗</div>
-        </div>
-
-        
-        <div id="quickReplyBox201775322" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201775322">
-                    <button class="js_reply_OK" data-id="201775322" data-fakeid="2175522242">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201775322" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li>
-    
-    <li class="message_item " id="msgListItem201769814" data-id="201769814">
-        
-        <div class="message_opr">
-            
-            <a href="javascript:;" class="js_star icon18_common star_gray" action="" idx="201769814" starred="" title="收藏消息">取消收藏</a>
-            
-            
-            
-            <a href="javascript:;" data-id="201769814" data-tofakeid="647277822" class="icon18_common reply_gray js_reply" title="快捷回复">快捷回复</a>
-        </div>
-        
-        <div class="message_info">
-            <div class="message_status"><em class="tips">已回复</em></div>
-            <div class="message_time">星期二 18:23</div>
-            <div class="user_info">
-                
-                <a href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=647277822&t=message/send&action=index&token=145239729&lang=zh_CN" target="_blank" data-fakeid="647277822" class="remark_name">谭雷</a>
-                
-                
-                <span class="nickname" data-fakeid="647277822"></span>
-                
-                
-                <a href="javascript:;" class="icon14_common edit_gray js_changeRemark" data-fakeid="647277822" title="修改备注" style="display:none;"></a>
-                
-                
-                <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/singlesendpage?tofakeid=647277822&t=message/send&action=index&token=145239729&lang=zh_CN" class="avatar" data-fakeid="647277822">
-                    <img src="<?=  base_url()?>weixin/messageManager_files/getheadimg(12)" data-fakeid="647277822">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="message_content text">
-            <div id="wxMsg201769814" data-id="201769814" class="wxMsg">给预产宝贝起名字</div>
-        </div>
-
-        
-        <div id="quickReplyBox201769814" class="js_quick_reply_box quick_reply_box">
-            <label for="" class="frm_label">快速回复:</label>
-            <div class="emoion_editor_wrp js_editor"></div>
-            <div class="verifyCode"></div>
-            <p class="quick_reply_box_tool_bar">
-                <span class="btn btn_primary btn_input" data-id="201769814">
-                    <button class="js_reply_OK" data-id="201769814" data-fakeid="647277822">发送</button>
-                </span><a class="js_reply_pickup btn btn_default pickup" data-id="201769814" href="javascript:;">收起</a>
-            </p>
-        </div>
-        
-    </li></ul>
+        <?php 
+         }
+          ?>
+        <?php
+            if(empty(array_filter($msgArr))){
+                echo '<p class="empty_tips">暂无消息</p>';
+            }
+        ?>
+        </ul>
         
 
         <div class="tool_area">
@@ -1070,9 +160,10 @@
         <a href="javascript:void(0);" class="btn page_prev" style="display: none;"><i class="arrow"></i></a>
         
             <span class="page_num">
-                <label>1</label>
+                <label id='currentPageIndex'>1</label>
                 <span class="num_gap">/</span>
-                <label>2</label>
+                
+               <label id='pageCount'><?=  ceil($msgCount/5) ?></label>
             </span>
         
         <a href="javascript:void(0);" class="btn page_next"><i class="arrow"></i></a>
@@ -1384,3 +475,63 @@ define('widget/pagination.css', [], function(){return null;});</script>
     <i class="popover_arrow popover_arrow_out"></i>
     <i class="popover_arrow popover_arrow_in"></i>
 </div></body></html>
+ <script  type="text/javascript"  src="<?=  base_url()?>weixin/jquery-1.9.11ec5f7.js"></script>
+    <script language="javascript" type="text/javascript" src="<?=  site_url()?>/weixin/messageManagerJs.js"></script>
+    
+    <script>
+        
+        function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+         }
+    var indexNum = getQueryString('pageidx');
+    if(indexNum == null || indexNum ==0){
+       indexNum =1;
+    }
+    $('label#currentPageIndex').text(indexNum);
+    var tmpCurrentPageIndex = parseInt($('label#currentPageIndex').text());
+    if(tmpCurrentPageIndex >1){
+         $('a.btn.page_prev').show();
+    }
+    var pageCount =<?=  ceil($msgCount/5) ?>;
+    if(tmpCurrentPageIndex === pageCount){
+        $('a.btn.page_next').hide();
+    }
+    
+     $('ul.tab_navs.title_tab li.tab_nav').each(function(){
+       $(this).removeClass('selected');
+   });
+   
+    var day = getQueryString('day');
+    //今天
+    if(parseInt(day) ===0){
+//        alert( $('ul.tab_navs.title_tab li.tab_nav[data-id="today"]').attr('class'));
+        $('ul.tab_navs.title_tab li.tab_nav[data-id="today"]').addClass('selected');
+    }
+    // 昨天
+    else if(parseInt(day) ===1){
+         $('ul.tab_navs.title_tab li.tab_nav[data-id="yesterday"]').addClass('selected');
+    }
+    //前天
+    else if (parseInt(day) ===2){
+         $('ul.tab_navs.title_tab li[data-id="beforeYesterday"]').addClass('selected');
+    }
+    //前天
+    else if (parseInt(day) ===3){
+         $('ul.tab_navs.title_tab li[data-id="fivedays"]').addClass('selected');
+    }
+    //全部消息
+     else if (parseInt(day) ===7){
+         $('ul.tab_navs.title_tab li.tab_nav[data-id="total"]').addClass('selected');
+    }
+    else if (parseInt(day) ===-1){
+         $('ul.tab_navs.title_tab li.tab_nav[data-id="star"]').addClass('selected');
+    }
+    //star
+    
+    if($("ul.message_list p.empty_tips").length>0){
+       $("div.pagination").hide();
+    }
+    
+    </script>
