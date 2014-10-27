@@ -10,6 +10,7 @@ and open the template in the editor.
 <title>添加用户</title>
 <script  type="text/javascript"  src="<?=  base_url()?>weixin/jquery-1.9.11ec5f7.js"></script>
  <script type="text/javascript">
+     
 	function jsonToString (obj){   
         var THIS = this;    
         switch(typeof(obj)){   
@@ -138,19 +139,21 @@ and open the template in the editor.
     var trHtml="<tr align='center'><td width='30%'><input type='checkbox' name='ckb'/></td><td width='30%'>"+
 	'<input type ="text" dataType="group" value="未分组'+tmp+'" name="groupingName">'
 	+"</td><td width='30%'><input type='text' value ='' name ='group'></td></tr>";
-    addTr(tab, row, trHtml);
+     addTr(tab, row, trHtml);
 	
 	setGroupData();
-	
-	var testTmp =0 ;
-	$('input[name=group]').each(function(key,val){
-		testTmp += parseInt($(val).attr('value'));
-	});
-	$('#countSpanTmp').text(testTmp);
-	
+	calcCount();
 	
 	//document.write(jsonToString(getGroupingData()));
   }
+   function calcCount(){
+       var testTmp =0 ;
+	$('input[name=group]').each(function(key,val){
+		testTmp += parseInt($(val).val());
+	});
+	$('#countSpanTmp').text(testTmp);
+        return testTmp;
+   }
    
    function setGroupData(){
 	var tmpArr=[];
@@ -158,9 +161,9 @@ and open the template in the editor.
 	//alert(count);
 	var size = $('input[name=group]').size();
 	for(var i = 0;i<size;i++){
-		if(count ==1){
+		if(size ===1){
 			tmpArr[i] = count;	
-			return;
+			break;
 		}
 		if(i === 0){
 			tmpArr[i] =getRandom(count);
@@ -182,13 +185,76 @@ and open the template in the editor.
 	}
 	
 	$('input[name=group]').each(function(key,val){
-		$(val).attr('value',tmpArr[key]);
+		$(val).val(tmpArr[key]);
 	});
-
-	
    }
+   function setNewGroupData(count){
+	var tmpArr=[];
+//	var count =parseInt($('#countSpan').text());
+	//alert(count);
+	var size = $('input[name=group][datachanged!=changed]').size();
+	for(var i = 0;i<size;i++){
+		if(size ===1){
+			tmpArr[i] = count;	
+			break;
+		}
+		if(i === 0){
+			tmpArr[i] =getRandom(count);
+		}
+		else{
+			if(i <size-1) {
+				if(sum(tmpArr)>=count){
+					tmpArr[i] = 0;
+				}
+				else {
+					tmpArr[i] =getRandom(count - sum(tmpArr));
+				}
+			}
+			else{
+				tmpArr[i]  =count - sum(tmpArr) >=0?count - sum(tmpArr):0;
+				//alert(tmpArr[i]);
+			}
+		}
+	}
+	
+	$('input[name=group][datachanged!=changed]').each(function(key,val){
+		$(val).val(tmpArr[key]);
+	});
+   }
+   
   function delTr2(){
      delTr('ckb');
+  }
+  
+  function reCalc(){
+        //未固定的值
+        var unFixedCount = 0 ;
+        $('input[name=group][datachanged!=changed]').each(function(key,val){
+		unFixedCount += parseInt($(val).val());
+        });
+        //固定值
+        var fixedCount =0 ;
+        $('input[name=group][datachanged=changed]').each(function(key,val){
+		fixedCount += parseInt($(val).val());
+        });
+        $("#info").empty();
+//        $("<p>随机值 ==>" +unFixedCount+"</p>").appendTo('#info');
+        $("<p>固定值:==>" +fixedCount + "</p>").appendTo('#info');
+        if(calcCount() === parseInt($("#fansCount").val())){
+            return;
+        }
+        if(fixedCount > $("#fansCount").val()){
+            alert("你的固定值已经超过了总粉丝数了,No zuo no die , 系统已自动为你重新生成了.");
+            setGroupData();
+            calcCount();
+        }
+        else{
+            //待分配数值
+           var newToAssigne = $("#fansCount").val() - fixedCount;
+            $("<p>待分配数值 ==>" +newToAssigne+"</p>").appendTo('#info');
+            setNewGroupData(newToAssigne);
+            calcCount();
+        }
   }
   
   function testGet(){
@@ -200,6 +266,17 @@ and open the template in the editor.
         $("#fansCount").on('input',function(e){
          // alert($(this).val());
           $("#countSpan").text($(this).val());
+             setGroupData();
+            calcCount();
+        });
+        
+        $(document).on("input","input[name=group]",function(e){
+            $(this).attr('datachanged','changed');
+            
+        });
+        
+        $("#submitBtn").click(function(){
+            
         });
     });
       
@@ -217,14 +294,14 @@ and open the template in the editor.
             店名:<input type ="text" name ="username"> <br>
             密码: <input type ="text" name ="pwd"> <br>
             头像:<input type="file" name="userfile" size="20" /> * 只能是"gif|jpg|png" 其中的一种 <br> 
-            总粉丝数:<input type="text" name ="fansCount" id ="fansCount" value='100000'><br>
+            总粉丝数:<input type="text" name ="fansCount" id ="fansCount" value='100'><br>
             类型:<input type="radio" value="1" name="type">订阅号
             <input type="radio" value="2" name ="type" checked="checked">服务号
             <input type="radio" value="3" name ="type" disabled="disabled"> 企业号 </br>
             添加分组:<input type='radio' name="grouping" id='grouping' checked="checked"> 是 <input type='radio' name="grouping" id='noGrouping'> 否 
             <fieldset>
             <legend>添加分组</legend>
-                <span id ="countSpan">100000</span>
+                <span id ="countSpan">100</span>
                
                 <span id ="countSpanTmp"></span>
               <table border="1px #ooo" id="tab" cellpadding="0"
@@ -237,18 +314,21 @@ and open the template in the editor.
                <tr align="center">
                    <td width="30%"></td>
                 <td width="30%"><input type ='text'  value ='未分组' name='groupingName'></td>
-                <td width="30%"><input type ='text'  value ='100000' name ='group'></td> 
+                <td width="30%"><input type ='text'  value ='100' name ='group'></td> 
                </tr>
               </table>
                 <input type="button" onclick="addTr2('tab', -1)" value="添加分组">
                 <input type="button" onclick="delTr2()" value="删除分组"></br>
+                <p> <input type="button"  onclick="reCalc();" value ="如果手动输入过分组中的数据，点我重新计算"></br></p>
+                <p>
                  <input type  = "button"  onclick="testGet();" value = '如果需要分组数据，请一定在点击提交前点击我!!~~~'>
+                 </p>
              </fieldset>
             <input type='hidden' name ='groupData' id ='groupingData'>
             
-            <input type="submit" value="提交" />
+            <input type="submit"  id ="submitBtn" value="提交" />
 </fieldset>
 </form>
-
+    <div id ="info"> </div>
 </body>
 </html>
