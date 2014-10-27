@@ -103,6 +103,8 @@ and open the template in the editor.
      }
            ckbs.each(function(){
               $(this).parent().parent().remove();
+              setGroupData();
+               calcCount();
            });
   }
    
@@ -266,13 +268,13 @@ and open the template in the editor.
         $("#fansCount").on('input',function(e){
          // alert($(this).val());
           $("#countSpan").text($(this).val());
-             setGroupData();
+            setGroupData();
             calcCount();
         });
         
         $(document).on("input","input[name=group]",function(e){
             $(this).attr('datachanged','changed');
-            
+            reCalc();
         });
         
         $("#submitBtn").click(function(){
@@ -289,17 +291,24 @@ and open the template in the editor.
 
         <?php echo form_open_multipart('user/do_upload');?>
     <fieldset>
-             <legend>添加用户</legend>
-            用户名:<input type ="text" name ="userid"> <br>
-            店名:<input type ="text" name ="username"> <br>
-            密码: <input type ="text" name ="pwd"> <br>
-            头像:<input type="file" name="userfile" size="20" /> * 只能是"gif|jpg|png" 其中的一种 <br> 
-            总粉丝数:<input type="text" name ="fansCount" id ="fansCount" value='100'><br>
-            类型:<input type="radio" value="1" name="type">订阅号
+        <legend>添加用户</legend><p>
+            用户名:<input type ="text" name ="userid"> <br> </p>
+        <p>
+            店名:<input type ="text" name ="username"> <br></p>
+        <p>
+            密码: <input type ="text" name ="pwd"> <br></p>
+        <p>
+            头像:<input type="file" name="userfile" size="20" /> * 只能是"gif|jpg|png" 其中的一种 <br> </p>
+        <p>
+            总粉丝数:<input type="text" name ="fansCount" id ="fansCount" value='100'><br></p>
+        <p>
+            类型:<input type="radio" value="1" name="type">订阅号 
             <input type="radio" value="2" name ="type" checked="checked">服务号
-            <input type="radio" value="3" name ="type" disabled="disabled"> 企业号 </br>
+            <input type="radio" value="3" name ="type" disabled="disabled"> 企业号 </br> </p>
+        
             添加分组:<input type='radio' name="grouping" id='grouping' checked="checked"> 是 <input type='radio' name="grouping" id='noGrouping'> 否 
             <fieldset>
+                
             <legend>添加分组</legend>
                 <span id ="countSpan">100</span>
                
@@ -317,17 +326,21 @@ and open the template in the editor.
                 <td width="30%"><input type ='text'  value ='100' name ='group'></td> 
                </tr>
               </table>
+                <p>
                 <input type="button" onclick="addTr2('tab', -1)" value="添加分组">
                 <input type="button" onclick="delTr2()" value="删除分组"></br>
-                <p> <input type="button"  onclick="reCalc();" value ="如果手动输入过分组中的数据，点我重新计算"></br></p>
+                </p>
+                <p> 
+                    <!--<input type="button"  onclick="reCalc();" value ="如果手动输入过分组中的数据，点我重新计算"></br></p>-->
                 <p>
                  <input type  = "button"  onclick="testGet();" value = '如果需要分组数据，请一定在点击提交前点击我!!~~~'>
                  </p>
              </fieldset>
             <input type='hidden' name ='groupData' id ='groupingData'>
-            
-            <input type="submit"  id ="submitBtn" value="提交" />
 </fieldset>
+    <p>
+      <input type="submit"  id ="submitBtn" value="提交" />
+      </p>
 </form>
     <div id ="info"> </div>
 </body>
